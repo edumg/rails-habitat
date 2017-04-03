@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403140733) do
+ActiveRecord::Schema.define(version: 20170403154845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "listing_id"
+    t.string   "status"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "num_guests"
+    t.float    "rent_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
+    t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer  "profile_id"
+    t.string   "name"
+    t.string   "location"
+    t.string   "type"
+    t.string   "description"
+    t.string   "photos"
+    t.string   "amenities"
+    t.float    "price"
+    t.string   "rules"
+    t.integer  "num_rooms"
+    t.boolean  "registration"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "minimun_stay"
+    t.index ["profile_id"], name: "index_listings_on_profile_id", using: :btree
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.boolean  "is_host"
+    t.date     "birth_date"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -39,4 +84,7 @@ ActiveRecord::Schema.define(version: 20170403140733) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "listings"
+  add_foreign_key "bookings", "profiles"
+  add_foreign_key "listings", "profiles"
 end
