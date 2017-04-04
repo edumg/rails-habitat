@@ -1,0 +1,24 @@
+<div class="container", style="padding: 90px">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">Edit Profile</div>
+        <div class="panel-body">
+
+          <%= render 'form' %>
+<br>
+          <div class="text-center">
+          <% if  @profile %>
+            <% if !@profile.photo.nil? %>
+            <%= cl_image_path @profile.photo, class: "avatar-very-large " %>
+            <% end %>
+            <% else %>
+            <p>no picture</p>
+          <% end %>
+        ss  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
