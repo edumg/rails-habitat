@@ -16,8 +16,8 @@
     <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
     <% end %>
 
-    <%= link_to mailbox_inbox_path class: "navbar-wagon-item navbar-wagon-link" do %>
-      <i class="fa fa-envelope-o">2</i>
+    <%= link_to mailbox_inbox_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <i class="fa fa-envelope-o"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></i>
     <% end %>
 
     <%= link_to "Help", root_path, class: "navbar-wagon-item navbar-wagon-link"  %>

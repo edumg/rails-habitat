@@ -1,0 +1,21 @@
+<div class="container", style="padding: 200px">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4">
+      <h1> <%= conversation.subject %> </h1>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4">
+
+      <ul>
+        <% content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+        <h3> <%= receipt.message.subject %> </h3>
+        <h3> <%= receipt.message %> </h3>
+        <h3> <%= receipt.message.body %> </h3>
+        <% end %>
+      </ul>
+      <%= render partial: 'conversations/form', conversation: conversation %>
+    </div>
+  </div>
+</div>
+
+
