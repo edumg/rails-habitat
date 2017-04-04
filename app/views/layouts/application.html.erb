@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RailsHabitat</title>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><%= yield(:title).empty? ? "Showcase - Performers For You" : yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
 
-</head>
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ -->
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <!-- Navbar -->
+    <%= render 'shared/navbar' %>
 
-<body>
+    <!-- Notices and Alerts -->
+    <% if notice %>
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <span class="notice"><%= notice %></span>
+      </div>
+    <% elsif alert %>
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
 
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-
+    <!-- Main Page -->
     <%= yield %>
 
-  <%= render 'shared/footer' %>
-</body>
+    <%= render 'shared/footer' %>
+
+    <!-- Javascripts -->
+    <%# javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.js" %>
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield(:after_js) %>
+  </body>
 </html>
