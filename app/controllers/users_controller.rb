@@ -11,5 +11,6 @@ class UsersController < Devise::RegistrationsController
   #   edit_profile_path
   # end
 
+
 end
 

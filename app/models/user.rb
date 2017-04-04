@@ -2,7 +2,6 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :profile
- # has_many :bookings
   validates :email, presence:true, uniqueness:true
   validates :password, presence:true
 
@@ -10,6 +9,25 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
+
+  acts_as_messageable
+
+  def mailboxer_name
+    if !current_user.nil?
+      name = "#{current_user.fist_name}_#{current_user.last_name}"
+      return name
+    else
+      self.email
+    end
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
+
+  def name
+    email
+  end
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
