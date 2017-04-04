@@ -7,18 +7,22 @@
         <div class="panel-body">
 
           <%= render 'form' %>
-<br>
+          <br>
           <div class="text-center">
-          <% if  @profile %>
-            <% if !@profile.photo.nil? %>
-            <%= cl_image_path @profile.photo, class: "avatar-very-large " %>
-            <% end %>
+            <% if  @profile && !@profile.photo.path.nil? %>
+              <%= cl_image_path @profile.photo, class: "avatar-very-large " %>
             <% else %>
-            <p>no picture</p>
-          <% end %>
-        ss  </div>
+              <p>no picture</p>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+@profile.photo
+
+PhotoUploader.where(profile_id: @profile.id)

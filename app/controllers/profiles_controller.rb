@@ -8,10 +8,8 @@ class ProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
+    flash[:notice] = "Profile udpated sucessfully!"
     redirect_to root_path
-  end
-
-  def edit
   end
 
   private

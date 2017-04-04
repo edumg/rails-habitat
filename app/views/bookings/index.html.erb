@@ -1,0 +1,54 @@
+ <% content_for(:title_tag) do %>
+ Show Bookings
+ <% end %>
+
+ <div style="padding: 60px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+
+        <div class="container">
+          <div class="row">
+            <h1 class="text-center">Your Bookings</h1>
+            <% @bookings.each do |booking| %>
+
+            <div class="col-xs-12 col-sm-4">
+              <%= link_to booking_path(booking) do %>
+              <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.table.photo, height: 300, width: 400, crop: :fill %>')">
+
+
+              </div>
+
+
+              <div class="card-user", style="padding: 20px">
+                <%= booking.table.name %>
+              </div>
+
+              <div class="card-category">
+                <strong>From:</strong> <%= booking.start_date %>
+                <p></p>
+                <strong>To:</strong> <%= booking.start_date %>
+              </div>
+
+
+              <div class="card-description-right", style="padding: 20px">
+                <%= link_to table_path(booking.table) do %>
+                <i class="fa fa-table fa-3x"></i>
+                <% end %>
+              </div>
+              <div class="card-description">
+                <%= booking.num_guests %>
+                <%= booking.cost %>
+              </div>
+              <br>
+              <% end %>
+            </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

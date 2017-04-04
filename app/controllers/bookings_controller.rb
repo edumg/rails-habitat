@@ -10,4 +10,8 @@ class BookingsController < ApplicationController
 
   def delete
   end
+
+  def index
+    @bookings = current_user.bookings
+  end
 end

@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
     else
       render :new
     end
+  end
 
   def destroy
     @listing = Listing.find(params[:id])

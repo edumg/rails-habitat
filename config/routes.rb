@@ -1,27 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'listings/new'
-
-  get 'listings/create'
-
-  get 'listings/index'
-
-  get 'listings/show'
-
-  get 'listings/detroy'
-
-  get 'listings/update'
-
-  get 'listings/edit'
-
-  get 'bookings/new'
-
-  get 'bookings/create'
-
-  get 'bookings/show'
-
-  get 'bookings/delete'
-
   resource :profile, only: [:show, :edit, :update]
 
   root to: 'pages#home'

@@ -1,0 +1,54 @@
+<%= simple_form_for(@profile) do |f| %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+  <%= f.input :is_host, input_html: { checked: @profile.is_host } %>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.label :birth_date %>
+    <%= f.text_field :birth_date %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.input :photo %>
+    <%= f.input :photo_change, as: :hidden %>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.submit class: "btn btn-primary text-center"  %>
+  </div>
+</div>
+
+<% end %>

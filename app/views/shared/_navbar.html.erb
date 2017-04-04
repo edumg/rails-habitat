@@ -23,12 +23,12 @@
 
     <%= link_to "Help", root_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link"  %>
-    <%= link_to "Profile", root_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+    <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link"  %>
 
     <% if current_user.profile.is_host %>
-    <%= link_to "List your tables", root_path, class: "navbar-wagon-item navbar-wagon-button btn"  %>
+    <%= link_to "List your listings", listings_path, class: "navbar-wagon-item navbar-wagon-button btn"  %>
     <% else %>
-    <%= link_to "View your bookings", root_path, class: "navbar-wagon-item navbar-wagon-button btn"  %>
+    <%= link_to "View your bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-button btn"  %>
     <% end %>
   </div>
   <% else %>
