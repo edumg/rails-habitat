@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[5.0]
       t.references :profile, foreign_key: true
       t.string :name
       t.string :location
-      t.string :type
+      t.string :type_place
       t.string :description
       t.string :photos
       t.string :amenities
