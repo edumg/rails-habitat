@@ -31,6 +31,9 @@ gem 'cloudinary'
 gem 'figaro'
 gem 'record_tag_helper'
 gem 'mailboxer'
+gem 'redis'
+
+gem 'dashing-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

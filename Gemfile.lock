@@ -66,6 +66,14 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.1)
+    dashing-rails (2.6.1)
+      coffee-script (>= 2.0)
+      connection_pool (~> 2.2)
+      jquery-rails (>= 3.0)
+      rails (>= 4.0)
+      redis (~> 3.2)
+      rufus-scheduler (~> 3.2)
     devise (4.2.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -75,6 +83,8 @@ GEM
     domain_name (0.5.20170223)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    et-orbi (1.0.2)
+      tzinfo
     execjs (2.7.0)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
@@ -171,12 +181,15 @@ GEM
       ffi (>= 0.5.0)
     record_tag_helper (1.0.0)
       actionview (~> 5.x)
+    redis (3.3.3)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.1)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rufus-scheduler (3.4.0)
+      et-orbi (~> 1.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -233,6 +246,7 @@ DEPENDENCIES
   carrierwave (~> 0.11.2)
   cloudinary
   coffee-rails (~> 4.2)
+  dashing-rails
   devise
   figaro
   font-awesome-sass
@@ -245,6 +259,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.2)
   record_tag_helper
+  redis
   sass-rails (~> 5.0)
   simple_form
   spring

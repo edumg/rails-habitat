@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Dashing::Engine, at: Dashing.config.engine_path
   resource :profile, only: [:show, :edit, :update]
 
   root to: 'pages#home'
