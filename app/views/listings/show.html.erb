@@ -1,15 +1,15 @@
 <% content_for(:title_tag) do %>
- Show Listing
- <% end %>
+Show Listing
+<% end %>
 
 
 <!--
 <div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>')">
 -->
+<div class="wrapper",  style="margin-top:70px">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>');">
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 500, width: 400, crop: :fill %>');">
-
-   <div class="container", style="padding: 60px">
+   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
@@ -53,5 +53,5 @@
       </div>
     </div>
   </div>
-
+</div>
 </div>

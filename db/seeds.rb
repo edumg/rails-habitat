@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-if !Listing.nil?
+if !Listing.last.nil?
   next_listing = Listing.last.id + 1
 else
   next_listing = 1
@@ -17,10 +17,10 @@ num_card_gens = 10
 profile_id = Profile.last.id
 
 
-(next_listing...(next_listing+num_card_gens)).each do |id|
-
-  d = Listing.new(profile_id: 1, name: "Room 12", location: "Amsterdam", type_place: "room",
+(next_listing..(next_listing+num_card_gens)).each do |id|
+  rnd = (rand(2)==1)
+  d = Listing.new(profile_id: 1, name: "Room 1", location: "Amsterdam", type_place: "room",
 description: "room in the city center", amenities: "none", price: 900.0, rules: "none",
-num_rooms: 4,
-registration: true, created_at: "2017-04-05 13:00:32", updated_at: "2017-04-05 13:24:45",
-photo: "image/upload/v1491397235/o5p9wh3wlep353aw3fhg.jpg">
+num_rooms: 4, registration: true, photo_cache: "image/upload/v1491397235/o5p9wh3wlep353aw3fhg.jpg", photo: "image/upload/v1491397235/o5p9wh3wlep353aw3fhg.jpg")
+  d.save
+end
