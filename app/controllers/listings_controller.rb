@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 
-  before_action :set_current_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_profile_user, only: [:create, :show, :edit, :update, :destroy]
   after_filter "save_my_previous_url", only: [:show]
 
   def new
@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-    @listing.profile_id = current_user.id
+    @listing.profile_id = @user.id
     if @listing.save
       redirect_to listings_path
     else
@@ -45,11 +45,11 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :location, :latitude, :longitude, :description, :photo, :photo_cache, :amenities, :rules, :profile_id, :price, :num_rooms, :registration)
+    params.require(:listing).permit(:type_place, :name, :location, :latitude, :longitude, :description, :photo, :photo_cache, :amenities, :rules, :profile_id, :price, :num_rooms, :registration)
   end
 
-  def set_current_user
-    @user = current_user
+  def set_current_profile_user
+    @user = current_user.profile
   end
 
   def save_my_previous_url

@@ -1,2 +1,57 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<% content_for(:title_tag) do %>
+ Show Listing
+ <% end %>
+
+
+<!--
+<div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>')">
+-->
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 500, width: 400, crop: :fill %>');">
+
+   <div class="container", style="padding: 60px">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+        <div class="text-center">
+          <h1> <%= @listing.name %> </h1>
+
+          <p>name: <%= @listing.name %> </p>
+          <p>description: <%= @listing.description %> </p>
+          <p>location: <%= @listing.location %> </p>
+          <p>price: <%= @listing.price %> </p>
+          <p>amenities: <%= @listing.amenities %> </p>
+          <p>rules: <%= @listing.rules %> </p>
+          <p>type of place: <%= @listing.type_place %> </p>
+          <p>number of rooms: <%= @listing.num_rooms %> </p>
+          <p>registration: <%= @listing.registration %> </p>
+
+          <% if current_user === @listing.profile_id %>
+          <%= link_to edit_listing_path do %>
+          <i class="fa fa-pencil-square-o fa-3x"></i>
+          <% end %>
+
+          <%= link_to listing_path(@listing), method: :delete  do %>
+          <i class="fa fa-trash fa-3x"></i>
+          <% end %>
+          <% end %>
+
+
+          <%= link_to new_listing_booking_path(@listing) do %>
+          <i class="fa fa-book fa-5x"></i>
+          <% end %>
+
+          <br>
+          <br>
+          <br>
+
+          <%= link_to @back_url  do %>
+          <i class="fa fa-chevron-left fa-5x"></i>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
