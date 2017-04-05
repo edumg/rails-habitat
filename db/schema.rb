@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405090807) do
+ActiveRecord::Schema.define(version: 20170405123803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170405090807) do
     t.integer  "profile_id"
     t.string   "name"
     t.string   "location"
-    t.string   "type_place"
+    t.string   "type"
     t.string   "description"
     t.string   "amenities"
     t.float    "price"
@@ -127,25 +127,6 @@ ActiveRecord::Schema.define(version: 20170405090807) do
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_restaurants_on_user_id", using: :btree
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "restaurant_id"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id", using: :btree
-    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -178,8 +159,4 @@ ActiveRecord::Schema.define(version: 20170405090807) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-
-  add_foreign_key "restaurants", "users"
-  add_foreign_key "reviews", "restaurants"
-  add_foreign_key "reviews", "users"
 end
