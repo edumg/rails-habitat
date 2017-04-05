@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   resource :profile, only: [:show, :edit, :update]
 
   root to: 'pages#home'
