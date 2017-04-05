@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405100532) do
+ActiveRecord::Schema.define(version: 20170405123803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20170405100532) do
     t.date     "end_date"
     t.integer  "num_guests"
     t.float    "rent_cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "minimum_stay"
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
   end
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(version: 20170405100532) do
     t.boolean  "registration"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "minimun_stay"
     t.string   "photo"
     t.index ["profile_id"], name: "index_listings_on_profile_id", using: :btree
   end
