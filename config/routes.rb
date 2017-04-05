@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :listings do
     resources :bookings, only: [:new, :create, :show, :delete]
   end

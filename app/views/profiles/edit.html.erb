@@ -9,7 +9,7 @@
           <%= render 'form' %>
           <br>
           <div class="text-center">
-            <% if  @profile && !@profile.photo.path.nil? %>
+            <% if  @profile && !@profile.photo.nil? %>
               <%= cl_image_path @profile.photo, class: "avatar-very-large " %>
             <% else %>
               <p>no picture</p>

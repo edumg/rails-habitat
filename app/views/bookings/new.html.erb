@@ -1,2 +1,40 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+ <div class="container", style="padding: 60px">
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-6">
+
+      <h1>Bookings#new</h1>
+
+      <%= render 'form' %>
+
+    </div>
+
+    <div class="container">
+
+      <div class="col-xs-12 col-sm-6">
+    <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 200, width: 400, crop: :fill %>')">
+
+        <h1> <%= @listing.name %> </h1>
+
+
+        <p>name: <%= @listing.name %> </p>
+        <p>description: <%= @listing.description %> </p>
+        <p>location: <%= @listing.location %> </p>
+        <p>price: <%= @listing.price %> </p>
+        <p>amenities: <%= @listing.amenities %> </p>
+        <p>rules: <%= @listing.rules %> </p>
+
+        <% if @listing.bookings.find_by profile_id: current_user.profile.id %>
+          <p style="color: red">_</p>
+        <% else %>
+          <p>_</p>
+        <% end %>
+
+        <%= link_to listings_path do %>
+        <i class="fa fa-reply fa-5x"></i>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
