@@ -3,5 +3,5 @@ class Profile < ApplicationRecord
   has_many :bookings
   has_many :listings
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photos, PhotoUploader
 end

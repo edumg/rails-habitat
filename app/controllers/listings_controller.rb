@@ -45,7 +45,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :location, :latitude, :longitude, :description, :photos, :amenities, :rules, :profile_id, :price, :num_rooms, :registration)
+    params.require(:listing).permit(:name, :location, :latitude, :longitude, :description, :photo, :photo_cache, :amenities, :rules, :profile_id, :price, :num_rooms, :registration)
   end
 
   def set_current_user
