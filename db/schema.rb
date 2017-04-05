@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20170405090807) do
     t.date     "end_date"
     t.integer  "num_guests"
     t.float    "rent_cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "minimum_stay"
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
   end
@@ -47,9 +48,8 @@ ActiveRecord::Schema.define(version: 20170405090807) do
     t.integer  "profile_id"
     t.string   "name"
     t.string   "location"
-    t.string   "type"
+    t.string   "type_place"
     t.string   "description"
-    t.string   "photos"
     t.string   "amenities"
     t.float    "price"
     t.string   "rules"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170405090807) do
     t.boolean  "registration"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "minimun_stay"
+    t.string   "photo"
     t.index ["profile_id"], name: "index_listings_on_profile_id", using: :btree
   end
 
@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170405090807) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+
   add_foreign_key "restaurants", "users"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"

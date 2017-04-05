@@ -1,0 +1,91 @@
+<%= simple_form_for(@listing) do |f| %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :Rooms %>
+    <%= f.select :num_rooms, [1,2,3,4,5,6,7,8,9,10] %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :amenities %>
+    <%= f.text_field :amenities %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :rules %>
+    <%= f.text_field :rules %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.label :Type %>
+    <%= f.text_field :type_place %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+  <%= f.input :registration, input_html: { checked: @listing.registration } %>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+    <%= f.submit class: "btn btn-primary text-center"  %>
+  </div>
+</div>
+
+<% end %>
+
