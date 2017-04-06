@@ -16,3 +16,5 @@
 //= require bootstrap-sprockets
 //= require cable
 //= require video
+//= require underscore
+//= require gmaps/google

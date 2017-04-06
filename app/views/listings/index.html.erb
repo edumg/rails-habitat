@@ -1,53 +1,71 @@
 <% content_for(:title_tag) do %>
 Show Listings
 <% end %>
-
 <div class="text-center">
-  <% if current_user.profile.is_host %>
-  <div class="text-center">
-    <%= link_to new_listing_path do %>
-    <i class="fa fa-plus fa-4x"></i>
-    <% end %>
-  </div>
-  <% end %>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-      <div class="row">
-       <div class="container">
-
-          <% @listings.each do |listing| %>
-
-          <div class="col-xs-12 col-sm-4">
-            <%= link_to listing_path(listing) do %>
-              <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
-
-                <div class="card-category">
-                  <%= listing.name %>
-                </div>
-
-                <div class="card-description">
-                  <%= listing.description %>
-                </div>
-
-                <% if current_user.facebook_picture_url.nil? %>
-                <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
-                <% else %>
-                <%= image_tag current_user.facebook_picture_url, class: "card-user avatar avatar-large" %>
-                <% end %>
-
-              </div>
-
-              <% end %>
-
-            </div>
-            <br>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+   <% if current_user.profile.is_host %>
+   <div class="text-center">
+      <%= link_to new_listing_path do %>
+      <i class="fa fa-plus fa-4x"></i>
+      <% end %>
+   </div>
+   <% end %>
 </div>
+<div class="wrap">
+   <div class="fleft">
+      <% @listings.each do |listing| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+           <%= link_to listing_path(listing) do %>
+             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "pkbmmzcualvabkjnz1mo.jpg", height: 300, width: 400, crop: :fill %>')">
+                <div class="card-category">
+                   <%= listing.name %>
+                </div>
+                <div class="card-description">
+                   <%= listing.description %>
+                </div>
+                <% if current_user.facebook_picture_url.nil? %>
+                  <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
+                <% else %>
+                  <%= image_tag current_user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+                <% end %>
+             </div>
+           <% end %>
+        </div>
+      <% end %>
+   </div>
 
+<div class="fright">
+   <% @listings.each do |listing| %>
+   <% @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
+      marker.lat listing.latitude
+      marker.lng listing.longitude
+      end
+      %>
+   <div id="map" style="width: 100%; height: 100vh;"></div>
+   <% content_for(:after_js) do %>
+   <%= javascript_tag do %>
+   $(document).ready(function() {
+   var handler = Gmaps.build('Google');
+   handler.buildMap({ internal: { id: 'map' } }, function() {
+   markers = handler.addMarkers(<%= raw @hash.to_json %>);
+   handler.bounds.extendWith(markers);
+   handler.fitMapToBounds();
+   if (markers.length == 0) {
+   handler.getMap().setZoom(2);
+   } else if (markers.length == 1) {
+   handler.getMap().setZoom(14);
+   }
+   });
+   });
+   <% end %>
+   <% end %>
+   <% end %>
+</div>
+</div>
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+var coord = <%= raw @flat_coordinates.to_json %>;
+alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+});
+<% end %>
+<% end %>

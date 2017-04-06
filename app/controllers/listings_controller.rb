@@ -26,6 +26,8 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @back_url = session[:my_previous_url]
+    @alert_message = "You are viewing #{@listing.name}"
+    @listing_coordinates = { lat: @listing.latitude, lng: @listing.longitude }
   end
 
   def update
@@ -40,6 +42,8 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    @listings = Listing.where.not(latitude: nil, longitude: nil)
+
   end
 
   private

@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 ruby '2.3.3'
 gem 'carrierwave', '~> 0.11.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -33,6 +37,10 @@ gem "simple_form"
 gem "autoprefixer-rails"
 gem 'cloudinary'
 gem 'figaro'
+
+gem 'gmaps4rails'
+gem 'geocoder'
+
 gem 'record_tag_helper'
 gem 'mailboxer'
 # Use jquery as the JavaScript library
