@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170405123803) do
     t.integer  "profile_id"
     t.string   "name"
     t.string   "location"
-    t.string   "type"
+    t.string   "type_place"
     t.string   "description"
     t.string   "amenities"
     t.float    "price"

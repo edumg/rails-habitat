@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require cable
 //= require video
+//= require navbar
