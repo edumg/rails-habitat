@@ -12,23 +12,25 @@
     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  -->
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name %> <%= action_name %> Site">
     <!-- Navbar -->
     <%= render 'shared/navbar' %>
 
     <!-- Notices and Alerts -->
     <% if notice %>
-      <div class="alert alert-info alert-dismissible" id="flash" style="margin-top: 70px" role="alert">
+      <div class="alert alert-info alert-dismissible" id="flash" role="alert">
         <span class="notice"><%= notice %></span>
       </div>
     <% elsif alert %>
-      <div class="alert alert-warning alert-dismissible" id="flash" style="margin-top: 70px" role="alert">
+      <div class="alert alert-warning alert-dismissible" id="flash" role="alert">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
 
     <!-- Main Page -->
-    <%= yield %>
+    <main class="Site-content">
+      <%= yield %>
+    </main>
 
     <%= render 'shared/footer' %>
 

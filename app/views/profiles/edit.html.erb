@@ -1,4 +1,4 @@
-<div class="container", style="padding: 90px">
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
@@ -9,9 +9,7 @@
           <%= render 'form' %>
           <br>
           <div class="text-center">
-            <% if  @profile && !@profile.photo.nil? %>
-              <%= cl_image_path @profile.photo, class: "avatar-very-large " %>
-            <% else %>
+            <% if  @profile && @profile.photo.nil? %>
               <p>no picture</p>
             <% end %>
           </div>
