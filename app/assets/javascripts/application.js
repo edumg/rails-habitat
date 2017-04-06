@@ -18,3 +18,4 @@
 //= require video
 //= require underscore
 //= require gmaps/google
+//= require google_maps_autocomplete
