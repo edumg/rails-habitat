@@ -9,10 +9,39 @@
   min-height: 80vh;
 }
 
-body {
-    padding-top: 70px;
-    min-height: 100vh;
+// body {
+//     padding-top: 70px;
+//     min-height: 100vh;
+// }
+
+h1, h2, h3 {
+  font-family: 'Nunito', sans-serif;
 }
+
+h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 100px;
+}
+
 
 
 .wrap {
@@ -25,6 +54,14 @@ body {
   width: 50%;
   background: white;
   height: 800px;
+
+a {
+  color: #0846BA;
+}
+
+a:hover {
+  color: #2176FF;
+  text-decoration: none;
 }
 
 
@@ -35,3 +72,7 @@ body {
   width: 50%;
   height: 800px;
 }
+
+
+
+
