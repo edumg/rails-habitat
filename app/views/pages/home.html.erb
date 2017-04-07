@@ -165,7 +165,7 @@
                   <% if current_user.facebook_picture_url.nil? %>
                     <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
                   <% else %>
-                    <%= image_tag current_user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+                    <%= image_tag current_user.profile.photo, class: "card-user avatar avatar-large" %>
                   <% end %>
                 <% end %>
               </div>
