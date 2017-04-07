@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406124524) do
+ActiveRecord::Schema.define(version: 20170407113136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 20170406124524) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -116,6 +122,25 @@ ActiveRecord::Schema.define(version: 20170406124524) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
   end
 
+  create_table "personalities", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "profile_id"
+    t.text     "answers",     default: "--- []\n"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["profile_id"], name: "index_personalities_on_profile_id", using: :btree
+    t.index ["question_id"], name: "index_personalities_on_question_id", using: :btree
+  end
+
+  create_table "personality_storages", force: :cascade do |t|
+    t.integer  "question_id"
+    t.text     "answers",     default: "--- []\n"
+    t.string   "session"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["question_id"], name: "index_personality_storages_on_question_id", using: :btree
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -127,6 +152,22 @@ ActiveRecord::Schema.define(version: 20170406124524) do
     t.datetime "updated_at", null: false
     t.string   "photo"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
+  create_table "questionnaires", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "answers"
+    t.index ["listing_id"], name: "index_questionnaires_on_listing_id", using: :btree
+    t.index ["question_id"], name: "index_questionnaires_on_question_id", using: :btree
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -161,4 +202,6 @@ ActiveRecord::Schema.define(version: 20170406124524) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
+  add_foreign_key "personalities", "profiles"
+  add_foreign_key "personalities", "questions"
 end

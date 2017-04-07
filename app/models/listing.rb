@@ -1,6 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :profile
   has_many :bookings, dependent: :destroy
+  belongs_to :questionnaire
 
   geocoded_by :location
   after_validation :geocode, if: :location_changed?

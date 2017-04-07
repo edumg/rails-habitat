@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update] do
+
+  end
+
+ # resources :personality_storages
+
+  resources :personality
 
   root to: 'pages#home'
 
@@ -26,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :bookings, only: [:new, :create, :show, :delete]
+    resources :questionnaire
   end
 
   resources :bookings

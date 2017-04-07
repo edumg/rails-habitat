@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title><%= yield(:title).empty? ? "Showcase - Performers For You" : yield(:title) %></title>
+  <title><%= yield(:title).empty? ? "Habitat" : yield(:title) %></title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body class="<%= controller_name %> <%= action_name %> Site">
   <!-- Navbar -->
@@ -15,11 +16,11 @@
 
   <!-- Notices and Alerts -->
   <% if notice %>
-  <div class="alert alert-info alert-dismissible" id="flash" role="alert">
+  <div class="alert alert-info alert-dismissible" id="flash" style="margin-top: 70px" role="alert">
     <span class="notice"><%= notice %></span>
   </div>
   <% elsif alert %>
-  <div class="alert alert-warning alert-dismissible" id="flash" role="alert">
+  <div class="alert alert-warning alert-dismissible" id="flash" style="margin-top: 70px" role="alert">
     <p class="alert"><%= alert %></p>
   </div>
   <% end %>

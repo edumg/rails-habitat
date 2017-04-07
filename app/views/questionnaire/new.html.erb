@@ -1,0 +1,29 @@
+
+
+       <div class="container">
+         <div class="col-xs-6 col-sm-6 col-md-12">
+           <% @questions.each do |question| %>
+             <%= link_to :anchor => "wall" do %>
+               <div class="col-xs-6 col-sm-6 col-md-1", style="margin-right: 25px; display:block">
+                 <h6 style="width: 100px">Question <%= question.id %></h6>
+                 <%= link_to "",  new_personality_path, class: "btn btn-primary", style: "heigth: 1px; border-radius: 30px; width: 100px" %>
+               </div>
+             <% end %>
+           <% end %>
+         </div>
+       </div>
+
+       <br>
+
+       <div class="container">
+         <div class="col-xs-6 col-sm-4 col-md-6">
+           <%= cl_image_tag "party_nv0ts7", class: "personality_photo" %>
+           <!-- <#%= cl_image_tag "yanko-peyankov-49164_ysnrmp", class: "personality_photo" %> -->
+           <%= cl_image_tag "john-sting-112628_urpf9v", class: "personality_photo" %>
+           <%= cl_image_tag "File1_txtgha", class: "personality_photo" %>
+           <%= cl_image_tag "File3_azp3hb", class: "personality_photo" %>
+           <%= cl_image_tag "File2_uxpdvw", class: "personality_photo" %>
+           <%= cl_image_tag "File4_lmvfil", class: "personality_photo" %>
+         </div>
+       </div>
+

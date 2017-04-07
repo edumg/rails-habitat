@@ -1,0 +1,2 @@
+module PersonalityStoragesHelper
+end

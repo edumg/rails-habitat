@@ -32,9 +32,12 @@ Show Listing
           <% end %>
           <% end %>
 
+          <%= link_to new_listing_questionnaire_path(@listing.id) do %>
+            <h4>Create Personality Test</h4>
+          <% end %>
 
-          <%= link_to new_listing_booking_path(@listing) do %>
-          <i class="fa fa-book fa-5x"></i>
+          <%= link_to new_listing_booking_path(@listing), controller: "listing", action: "verify" do %>
+            <i class="fa fa-book fa-5x"></i>
           <% end %>
 
           <br>
