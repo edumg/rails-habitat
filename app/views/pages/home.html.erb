@@ -26,7 +26,7 @@
   </div>
 
 <!--
-<div class="banner" style=" background: url('<%= cl_image_path "room_if6zlj" %>')">
+<div class="banner" style=" background: url('<#%= cl_image_path "room_if6zlj" %>')">
 
     <div class="banner-content">
 
@@ -161,12 +161,13 @@
                   <%= listing.description %>
                 </div>
 
-                <% if current_user.facebook_picture_url.nil? %>
-                <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
-                <% else %>
-                <%= image_tag current_user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+                <% if current_user %>
+                  <% if current_user.facebook_picture_url.nil? %>
+                    <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
+                  <% else %>
+                    <%= image_tag current_user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+                  <% end %>
                 <% end %>
-
               </div>
 
               <% end %>
