@@ -5,25 +5,26 @@
     <div class="navbar-header">
       <%= cl_image_tag "habitat_logo_1_nyescm", style: "width:150px" %>
     </div>
-    <div class="collapse navbar-collapse">
+    <div>
       <% if user_signed_in? %>
         <ul class="nav navbar-nav pull-right test1">
           <li> <%= link_to "Help", root_path  %> </li>
           <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
           <li> <%= link_to "Profile", profile_path  %> </li>
           <% if current_user.profile.is_host %>
-            <li> <%= link_to "List your listings", listings_path %> </li>
+            <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
           <% else %>
             <li> <%= link_to "View your bookings", bookings_path %> </li>
           <% end %>
         </ul>
       <% else %>
 
-        <div class="nav navbar-nav pull-right test1">
+        <div>
+         <ul class="nav navbar-nav pull-right test1">
           <li> <%= link_to "Help", root_path %> </li>
           <li> <%= link_to "Login", user_session_path %> </li>
           <li> <%= link_to "Sign up",  new_user_registration_path %> </li>
-          <li> <%= link_to "List your listings", listings_path %> </li>
+          <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
         </div>
       <% end %>
      </div>

@@ -36,19 +36,38 @@
   border-radius: 0.4em;
 }
 
-
-.banner .btn {
-  background-color: #C4BF9C;
-  opacity: 0.95;
-  border: 1px solid;
-  border-radius: 0.5em;
+.banner-button {
+  padding: 0 20px;
+  border-radius: 0.4em;
+  line-height: 40px;
+  font-weight: bold;
+  background-color: #0846BA;
+  font-size: 14px;
+  border: 2px solid #0846BA;
 }
 
-.banner .btn:hover {
-  color: white;
-  background: #8C865F;
-  border-color: #8C865F;
+.banner-button:hover {
+  padding: 0 20px;
+  border-radius: 0.4em;
+  line-height: 40px;
+  font-weight: bold;
+  background-color: #2176FF;
+  font-size: 14px;
+  border: 2px solid #2176FF;
 }
+
+// .banner .btn {
+//   background-color: #C4BF9C;
+//   opacity: 0.95;
+//   border: 1px solid;
+//   border-radius: 0.5em;
+// }
+
+// .banner .btn:hover {
+//   color: white;
+//   background: #8C865F;
+//   border-color: #8C865F;
+// }
 
 .banner p {
   font-size: 20px;
