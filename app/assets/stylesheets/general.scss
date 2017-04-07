@@ -21,15 +21,11 @@ h1, h2, h3 {
 h1 {
   font-size: 28px;
   font-weight: normal;
-  margin-bottom: 10px;
-  margin-top: 0;
 }
 
 h2 {
   font-size: 28px;
   font-weight: 900;
-  margin-bottom: 30px;
-  margin-top: 0;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -39,7 +35,32 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: normal;
-  margin-top: 100px;
+}
+
+.marging-top {
+  margin-top: 50px;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
+
+.container-bg {
+  background: #F7F7F7;
+  width:100%;
+  position: relative;
+  left: 0px;  /* stick it wherever it was positioned by default */
+  top: 0px;
+}
+
+.div-margin {
+  margin-right: 130px;
+  margin-left: 130px;
+  // margin-bottom: 50px;
+}
+
+.row-marging {
+  margin-bottom: 40px;
 }
 
 a {
