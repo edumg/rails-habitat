@@ -18,6 +18,7 @@ development:
 production:
   FB_ID: "1519387221425091"
   FB_SECRET: "ebf6f25e50bd3eb7955f446f6b3d3c6a"
-#  GOOGLE_API_KEY: "AIzaSyCi59IBI7buNgg9dK6zUV_bMyTwx5_Nf14"
+  GOOGLE_API_KEY: "AIzaSyCucfQMKhItzVNiJnxuLkIeQWM5y9VisYQ"
+  # "AIzaSyCi59IBI7buNgg9dK6zUV_bMyTwx5_Nf14"
 
 CLOUDINARY_URL: "cloudinary://777589833434932:KgdeJHLI2D-5EmNiS18JN5BpKmU@dc2fg86gy"
