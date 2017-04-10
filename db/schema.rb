@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407113136) do
+ActiveRecord::Schema.define(version: 20170410102610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,10 @@ ActiveRecord::Schema.define(version: 20170407113136) do
     t.date     "end_date"
     t.integer  "num_guests"
     t.float    "rent_cost"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "minimum_stay"
+    t.integer  "price_cents",  default: 0, null: false
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
   end
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20170407113136) do
     t.integer  "profile_id"
     t.string   "name"
     t.string   "location"
-    t.string   "type_place"
     t.string   "description"
     t.string   "amenities"
     t.float    "price"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170407113136) do
     t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "type_place"
     t.index ["profile_id"], name: "index_listings_on_profile_id", using: :btree
   end
 
@@ -170,6 +171,25 @@ ActiveRecord::Schema.define(version: 20170407113136) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id", using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "restaurant_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -204,4 +224,7 @@ ActiveRecord::Schema.define(version: 20170407113136) do
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "personalities", "profiles"
   add_foreign_key "personalities", "questions"
+  add_foreign_key "restaurants", "users"
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end
