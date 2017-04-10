@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  resource :profile, only: [:show, :edit, :update] do
-
+    resource :profile, only: [:show, :edit, :update] do
   end
 
  # resources :personality_storages

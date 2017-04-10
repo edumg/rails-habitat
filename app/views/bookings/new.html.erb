@@ -1,4 +1,4 @@
- <div class="container", style="padding: 60px">
+ <div id="booking-date" class="container", style="padding: 60px">
   <div class="row text-center">
     <div class="col-xs-12 col-sm-6">
 
@@ -11,10 +11,9 @@
     <div class="container">
 
       <div class="col-xs-12 col-sm-6">
-    <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 200, width: 400, crop: :fill %>')">
+    <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 400, width: 500, crop: :fill %>')">
 
         <h1> <%= @listing.name %> </h1>
-
 
         <p>name: <%= @listing.name %> </p>
         <p>description: <%= @listing.description %> </p>

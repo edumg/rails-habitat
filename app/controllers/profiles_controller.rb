@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :get_current_profile, only: [:show, :update, :edit]
   after_filter "save_my_previous_url", only: [:show]
+  before_action :get_profile_bookings_host, only: [:show]
 
   def show
     @back_url = session[:my_previous_url]
@@ -24,6 +25,10 @@ class ProfilesController < ApplicationController
 
   def get_current_profile
     @profile = current_user.profile
+  end
+
+  def get_profile_bookings_host
+    @bookings = current_user.profile.bookings
   end
 
 end
