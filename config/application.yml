@@ -21,3 +21,9 @@ production:
 #  GOOGLE_API_KEY: "AIzaSyCi59IBI7buNgg9dK6zUV_bMyTwx5_Nf14"
 
 CLOUDINARY_URL: "cloudinary://777589833434932:KgdeJHLI2D-5EmNiS18JN5BpKmU@dc2fg86gy"
+
+# Stripe Development key - test
+
+development:
+  STRIPE_PUBLISHABLE_KEY: "pk_test_6LOwWXQ2TMWpKQop2zmuDdiH"
+  STRIPE_SECRET_KEY: "sk_test_Jce80QbHktdVz9mrK4Y8EtVj"

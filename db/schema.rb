@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410102610) do
-
+ActiveRecord::Schema.define(version: 20170410150722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +42,12 @@ ActiveRecord::Schema.define(version: 20170410102610) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "num_guests"
-    t.integer  "price_cents",  default: 0, null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.float    "rent_cost"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "minimum_stay"
-    t.integer  "rent_cost_cents"
+    t.integer  "price_cents",  default: 0, null: false
+    t.string   "sku"
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
   end
@@ -127,11 +127,10 @@ ActiveRecord::Schema.define(version: 20170410102610) do
   create_table "orders", force: :cascade do |t|
     t.string   "state"
     t.string   "booking_sku"
-    t.integer  "amount_cents",    default: 0,     null: false
-    t.string   "amount_currency", default: "USD", null: false
+    t.integer  "amount_cents", default: 0, null: false
     t.json     "payment"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "personalities", force: :cascade do |t|
