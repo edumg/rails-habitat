@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     end_date = Date.civil(params[:booking]["end_date(1i)"].to_i,params[:booking]["end_date(2i)"].to_i,params[:booking]["end_date(3i)"].to_i)
 
     if @booking.save && ( end_date >= start_date )
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
