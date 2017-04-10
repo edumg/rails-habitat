@@ -22,4 +22,5 @@
 //= require google_maps_autocomplete
 
 //= require navbar
+//= require bookings
 
