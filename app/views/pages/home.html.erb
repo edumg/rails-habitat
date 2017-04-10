@@ -9,6 +9,7 @@
 
           <% if user_signed_in? %>
             <%= link_to "Get Started", listings_path, class: "btn btn-primary btn-lg banner-button"  %>
+
             <!-- <input type="submit" class="btn btn-primary btn-lg banner-button" value="Get Started"> -->
           <% else %>
             <%= link_to "Get Started", new_personality_path, class: "btn btn-primary btn-lg banner-button"  %>
