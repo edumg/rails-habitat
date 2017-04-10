@@ -6,5 +6,5 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
   validates :num_guests, presence: true
   #validates :rent_cost, presence: true
-  validates :minimun_stay, presence:true
+  validates :minimum_stay, presence:true
 end
