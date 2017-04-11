@@ -25,4 +25,5 @@
 //= require bookings
 //= require profile
 //= require flash
+//= require personality
 
