@@ -4,7 +4,18 @@ class BookingsController < ApplicationController
   before_action :set_listing_by_id, only: [:new, :create]
 
   def index
-    @bookings = current_user.profile.bookings
+    @bookings = Booking.all
+    @list_book_path = false
+    if params[:listing_id]
+      @list_book_path = true
+      # get bookings of a listing
+      @listing_bookings = Booking.where(listing_id: @listing.id)
+      @foo_attr = { "data-foo-1" => 1, "data-foo-2" => 2 }
+    end
+
+    if current_user.profile.is_host
+      @bookings = current_user.profile.bookings
+    end
   end
 
   def edit
@@ -20,11 +31,22 @@ class BookingsController < ApplicationController
     @booking.profile_id = current_user.profile.id
     @booking.listing_id = params[:listing_id]
 
+    @booking.price_cents = @listing.price
+    @booking.rent_cost_cents = @listing.price * 100
+    @booking.status = "CREATED"
+
     start_date = Date.civil(params[:booking]["start_date(1i)"].to_i,params[:booking]["start_date(2i)"].to_i,params[:booking]["start_date(3i)"].to_i)
     end_date = Date.civil(params[:booking]["end_date(1i)"].to_i,params[:booking]["end_date(2i)"].to_i,params[:booking]["end_date(3i)"].to_i)
 
     if @booking.save && ( end_date >= start_date )
-      redirect_to bookings_path
+      #notify host
+      recipients = User.where(id: @listing.profile.user.id)
+      msg_body = "New booking was created for listing #{@listing.name} with booking id #{@booking.id}!"
+      msg_subject = "New booking for listing #{@listing.name}"
+      conversation = current_user.send_message(recipients, msg_body, msg_subject).conversation
+      flash[:notice] = "Notification email was sent to the host!"
+
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -34,6 +56,7 @@ class BookingsController < ApplicationController
   def show
     @profile = current_user.profile
     @booking = Booking.find_by profile_id: @profile.id
+    @total_price = @booking.rent_cost_cents
   end
 
   def delete
@@ -44,6 +67,10 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to @listing
+  end
+
+  def mark_as_available_to_pay
+    raise params.inspect
   end
 
   private

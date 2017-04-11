@@ -1,0 +1,79 @@
+<div class="wrap" style="padding-top: 0px">
+  <div class="fleft" style="width: 40%; padding: 30px">
+  <br>
+    <div class="banner" style="padding-top: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 500, width: 400, crop: :fill %>');">
+
+       <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+            <div class="text-center">
+              <h1> <%= @listing.name %> </h1>
+
+              <p>name: <%= @listing.name %> </p>
+              <p>description: <%= @listing.description %> </p>
+              <p>location: <%= @listing.location %> </p>
+              <p>owner: <%= @listing.profile.first_name %> <%= @listing.profile.last_name %></p>
+              <p>owner id: <%= @listing.profile.id %></p>
+              <p>price: <%= @listing.price %> </p>
+              <p>amenities: <%= @listing.amenities %> </p>
+              <p>rules: <%= @listing.rules %> </p>
+              <p>type of place: <%= @listing.type_place %> </p>
+              <p>number of rooms: <%= @listing.num_rooms %> </p>
+              <p>registration: <%= @listing.registration %> </p>
+
+              <br>
+              <br>
+
+              <%= link_to @back_url  do %>
+              <i class="fa fa-chevron-left fa-5x" style="margin-bottom: 100px" ></i>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="fright" style="width: 60%">
+    <div class="text-center">
+
+      <% if @bookings.nil? %>
+        <h1>No Bookings...</h1>
+      <% else %>
+        <h1>Bookings</h1>
+        <% @listing_bookings.each do |booking| %>
+          <div class="product">
+            <%= link_to listing_path(booking.listing) do %>
+             <%= cl_image_tag booking.listing.photo, class: "product-image hidden-xs" %>
+            <% end %>
+
+            <div class='product-body'>
+              <h3><%= booking.listing.name %></h3>
+              <p class="hidden" id="booking-id"><%= booking.id %></p>
+              <p>From: <%= booking.start_date %> To: <%= booking.end_date %>  <%= (booking.end_date - booking.start_date).to_i %> days </p>
+              <p>Amount: <%= humanized_money_with_symbol(booking.rent_cost_cents) %></p>
+              <p>Renter: <%= booking.profile.first_name %> <% booking.profile.last_name %></p>
+            </div>
+            <ul class="list-inline product-controls hidden-sm hidden-xs">
+              <li>
+                <i class="fa fa-plus fa-2x"  id="new-booking-<%= booking.id%> "></i>
+              </li>
+
+              <li>
+                <i class="fa fa-money fa-2x" id="new-payment-<%= booking.id%> "></i>
+              </li>
+
+              <li>
+                <i class="fa fa-handshake-o fa-2x" id="new-contract-<%= booking.id%> "></i>
+              </li>
+
+            </ul>
+          </div>
+
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

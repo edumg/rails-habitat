@@ -1,36 +1,64 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+<div class="wrap" style="padding-top: 0px">
+  <div class="fleft" style="width: 40%; padding: 30px">
+          <div class="panel panel-primary">
+            <div class="panel-heading text-center">Profile</div>
+            <div class="panel-body text-center">
 
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center">Profile</div>
-        <div class="panel-body text-center">
+              <p>first name: <%= current_user.profile.first_name %> </p>
+              <p>last name: <%= current_user.profile.last_name %> </p>
+              <p>gender: <%= current_user.profile.gender %> </p>
 
-          <p>first name: <%= current_user.profile.first_name %> </p>
-          <p>last name: <%= current_user.profile.last_name %> </p>
-          <p>gender: <%= current_user.profile.gender %> </p>
+              <% if current_user.profile.is_host %>
+              <p>Type Account: <strong>Host</strong> </p>
+              <% else %>
+              <p>Type Account: <strong>Renter</strong> </p>
+              <% end %>
 
-          <% if current_user.profile.is_host %>
-          <p>Type Account: <strong>Host</strong> </p>
-          <% else %>
-          <p>Type Account: <strong>Renter</strong> </p>
-          <% end %>
+              <p>Birth Date: <%= current_user.profile.birth_date %> </p>
 
-          <p>Birth Date: <%= current_user.profile.birth_date %> </p>
+              <br>
+              <%= link_to edit_profile_path do %>
+              <i class="fa fa-pencil-square-o fa-3x"></i>
+              <% end %>
+              <br>
 
-          <br>
-          <%= link_to edit_profile_path do %>
-          <i class="fa fa-pencil-square-o fa-3x"></i>
-          <% end %>
-          <br>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= link_to root_path do %>
+            <i class="fa fa-chevron-left fa-5x"></i>
+            <% end %>
+          </div>
 
-        </div>
-      </div>
-      <div class="text-center">
-        <%= link_to root_path do %>
-        <i class="fa fa-chevron-left fa-5x"></i>
-        <% end %>
-      </div>
-    </div>
   </div>
-</div>
+  <div class="fright" style="width: 60%;">
+
+      <% if @bookings.nil? %>
+        <h1 class="text-center">No Bookings...</h1>
+      <% else %>
+        <h1 class="text-center">Your Listings</h1>
+
+        <% @listings.each do |listing| %>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+             <%= link_to listing_bookings_path(listing) do %>
+               <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
+                  <div class="card-category">
+                     <%= listing.name %>
+                  </div>
+                  <div class="card-description">
+                     <%= listing.description %>
+                  </div>
+                  <% if current_user.facebook_picture_url.nil? %>
+                    <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
+                  <% else %>
+                    <%= image_tag current_user.profile.photo, class: "card-user avatar avatar-large" %>
+                  <% end %>
+
+               </div>
+             <% end %>
+
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+

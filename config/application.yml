@@ -23,3 +23,10 @@ production:
 #AIzaSyCucfQMKhItzVNiJnxuLkIeQWM5y9VisYQ
 CLOUDINARY_URL: "cloudinary://777589833434932:KgdeJHLI2D-5EmNiS18JN5BpKmU@dc2fg86gy"
 GOOGLE_API_SERVER_KEY: "AIzaSyBHoRgZzWIEEWEBtYsShrZNU3fY9984Y1g"
+
+
+# Stripe Development key - test
+
+development:
+  STRIPE_PUBLISHABLE_KEY: "pk_test_6LOwWXQ2TMWpKQop2zmuDdiH"
+  STRIPE_SECRET_KEY: "sk_test_Jce80QbHktdVz9mrK4Y8EtVj"
