@@ -1,11 +1,10 @@
 $(window).scroll(function() {
-
   //behavior homepage
   if(window.location.href.split("/")[3] == "") {
     if($(this).scrollTop() < 30){
       $('.navbar-inverse .navbar-nav>li>a').css('color', 'black');
     } else {
-      if($(this).scrollTop() > 262) {
+      if($(this).scrollTop() > 99) {
         $('.opaque-navbar').addClass('opaque');
         $('.navbar-inverse .navbar-nav>li>a').css('color', 'black');
       } else {
@@ -19,3 +18,4 @@ $(window).scroll(function() {
     $('.navbar-inverse .navbar-nav>li>a').css('color', 'black');
   }
 });
+

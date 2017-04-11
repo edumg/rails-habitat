@@ -1,6 +1,6 @@
 <div class="fleft">
     <div class="title">
-        <h1 class="title-h1">
+        <h1 class="title-h1" id="banner-left-first-text">
           Matchmaking home rental!
         </h1>
         <h2 class="title-h2">
@@ -10,7 +10,7 @@
         <input type="submit" class="btn btn-primary btn-lg banner-button" value="Get Started">
         <h3 class="title-h3">
           <%= link_to  listings_path do %>
-            See all <strong>132 listings</strong> available in Amsterdam <i class="fa fa-chevron-right"></i>
+            See all <strong><%= Listing.count %> listings</strong> available in Amsterdam <i class="fa fa-chevron-right"></i>
           <% end %>
         </h3>
     </div>
