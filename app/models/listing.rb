@@ -14,7 +14,6 @@ class Listing < ApplicationRecord
   validates :location, presence:true
   validates :price, presence:true
   validates :num_rooms, presence:true
-  validates :registration, presence:true
 
   mount_uploader :photo, PhotoUploader
 end

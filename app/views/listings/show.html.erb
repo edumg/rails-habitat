@@ -22,7 +22,6 @@ Show Listing
           <p>rules: <%= @listing.rules %> </p>
           <p>type of place: <%= @listing.type_place %> </p>
           <p>number of rooms: <%= @listing.num_rooms %> </p>
-          <p>registration: <%= @listing.registration %> </p>
 
           <% if current_user === @listing.profile_id %>
           <%= link_to edit_listing_path do %>
