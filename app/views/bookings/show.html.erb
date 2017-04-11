@@ -19,9 +19,9 @@ Show Booking
         <p>End Date: <%= @booking.end_date %> </p>
         <p>Num guests: <%= @booking.num_guests %> </p>
         <p>Minimum Stay: <%= @booking.minimum_stay %> </p>
-        <p>Cost (cents): <%= @booking.listing.type_place %> </p>
-        <p>number of rooms: <%= @booking.rent_cost %> </p>
-        <p>Amount: <%= humanized_money_with_symbol(@listing_price) %></p>
+        <p>Cost (cents): <%= @booking.rent_cost_cents %> </p>
+        <p>Amount: <%= humanized_money_with_symbol(@total_price) %></p>
+
 
         <% if current_user === @booking.profile_id %>
         <%= link_to edit_booking_path do %>

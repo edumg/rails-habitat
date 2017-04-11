@@ -23,4 +23,5 @@
 
 //= require navbar
 //= require bookings
+//= require profile
 
