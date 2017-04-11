@@ -1,7 +1,15 @@
 
+.navbar-container {
+  width: 1400px;
+}
+
+
+
+
 .navbar-habitat-brand {
   width: 150px;
   margin-top: 5px;
+  margin-left: 15px;
 }
 
 
@@ -24,13 +32,17 @@
     transition: background-color .5s ease 0s;
 }
 
+
+// .opaque-navbar.test1>li>a {
+
 .opaque-navbar.test1>li>a {
   color: white;
+  font-weight: bold !important;
 }
 
 .navbar-nav .navbar-button {
-  color: black !important;
-  font-weight: 900;
+  color: #191919 !important;
+  font-weight: bold;
   padding-top: 8px !important;
   padding-bottom: 8px !important;
   display: inline-block;
@@ -38,8 +50,18 @@
   white-space: nowrap;
   vertical-align: middle;
   background-color: #FFFC31;
-  border-radius: 0.4em;
+  border-radius: 0.2em;
   margin-top : 6px;
+}
+
+.navbar-nav .navbar-button:hover {
+  background-color: #ffe100 !important;
+}
+
+
+
+.navbar-nav .navbar-links {
+  font-weight: 600 !important;
 }
 
 // .navbar-button {

@@ -1,7 +1,54 @@
-div.form-inputs, div.form-actions, .form-header, div.link {
+div.form-actions, .form-header, div.link {
   margin: 30px auto;
-  max-width: 50%;
+  max-width: 100%;
 }
+
+div.form-inputs {
+  margin: 30px auto;
+  max-width: 100%;
+}
+
+// div.form-actions {
+//   background-color: #008dde;
+// }
+
+.login-button {
+  margin : 0px auto;
+  padding: 0 20px;
+  border-radius: 0.4em;
+  line-height: 40px;
+  font-weight: bold;
+  background-color: #0846BA;
+  font-size: 14px;
+  border: 2px solid #0846BA;
+}
+
+.login-button:hover {
+  padding: 0 20px;
+  border-radius: 0.4em;
+  line-height: 40px;
+  font-weight: bold;
+  background-color: #2176FF;
+  font-size: 14px;
+  border: 2px solid #2176FF;
+}
+
+
+form fieldset input[type="submit"] {
+  background-color: #008dde;
+  border: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #f4f4f4;
+  cursor: pointer;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  height: 50px;
+  text-transform: uppercase;
+  width: 300px;
+  -webkit-appearance:none;
+}
+
 #names-div, #address-div {
   display:flex;
   justify-content: space-between;
