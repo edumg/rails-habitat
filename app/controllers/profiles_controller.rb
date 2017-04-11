@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def show
     @back_url = session[:my_previous_url]
+    @listings = current_user.profile.listings
   end
 
   def update

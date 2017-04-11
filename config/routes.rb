@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
 
     resources :listings do
-      resources :bookings, only: [:new, :create, :show, :delete]
+      resources :bookings, only: [:index, :new, :create, :show, :delete]
       resources :questionnaire
     end
 
