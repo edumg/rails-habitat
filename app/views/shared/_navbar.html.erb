@@ -1,74 +1,18 @@
- <!-- NAVBAR -->
+<!-- NAVBAR -->
 
  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
   <div class="navbar-container">
     <div class="navbar-header">
-
-      <%= link_to root_path do %>
-        <%= cl_image_tag "habitat_logo_1_nyescm", style: "width:150px" %>
-      <% end %>
-
+      <%= cl_image_tag "habitat_logo_1_nyescm", class:"navbar-habitat-brand" %>
     </div>
     <div>
-
-    <!-- change navbar in personality test page -->
-    <% if request.original_url.include? "personality/new" %>
       <% if user_signed_in? %>
-            <%= link_to mailbox_inbox_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-         <% if !current_user.facebook_picture_url.nil? %>
-           <div class="badge-container">
-             <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
-             <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-               <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-             <% end %>
-           </div>
-           <% else %>
-           <div class="badge-container">
-             <%= image_tag current_user.profile.photo, class: "avatar"%>
-             <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-               <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-             <% end %>
-           </div>
-         <% end %>
-       <% end %>
         <ul class="nav navbar-nav pull-right test1">
-          <li> <%= link_to "Help", root_path  %> </li>
-          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
-          <li> <%= link_to "Profile", profile_path  %> </li>
-        </ul>
-      <% else %>
-        <ul class="nav navbar-nav pull-right test1">
-          <li> <%= link_to "Help", root_path  %> </li>
-        </ul>
-      <% end %>
-    <% else %>
-      <% if user_signed_in? %>
-
-        <ul class="nav navbar-nav pull-right test1">
-
-        <li>
-      <%= link_to mailbox_inbox_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-
-        <% if !current_user.facebook_picture_url.nil? %>
-          <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
-          <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-            <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-          <% end %>
-          <% else %>
-            <%= image_tag current_user.profile.photo, class: "avatar"%>
-            <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-              <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-            <% end %>
-         <% end %>
-        <% end %>
-        </li>
           <li> <%= link_to "Help", root_path, class: "navbar-links"  %> </li>
           <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-links"  %> </li>
           <li> <%= link_to "Profile", profile_path, class: "navbar-links"  %> </li>
-
           <% if current_user.profile.is_host %>
             <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
-            <li> <%= link_to "Manage your bookings", profile_path, class: "btn btn-primary" %> </li>
           <% else %>
             <li> <%= link_to "View your bookings", bookings_path %> </li>
           <% end %>
@@ -83,7 +27,6 @@
           <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
         </div>
       <% end %>
-    <% end %>
      </div>
   </div>
 </div>
