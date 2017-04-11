@@ -7,7 +7,7 @@ $(window).scroll(function() {
 
   } else {
     $('.opaque-navbar').removeClass('opaque');
-    $('.navbar-inverse .navbar-nav>li>a').css('color', 'black');
+    $('.navbar-inverse .navbar-nav>li>a').css('color', 'white');
 
   }
 });
