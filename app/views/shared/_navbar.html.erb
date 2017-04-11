@@ -1,16 +1,16 @@
  <!-- NAVBAR -->
 
  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
-  <div class="container">
+  <div class="navbar-container">
     <div class="navbar-header">
       <%= cl_image_tag "habitat_logo_1_nyescm", class:"navbar-habitat-brand" %>
     </div>
     <div>
       <% if user_signed_in? %>
         <ul class="nav navbar-nav pull-right test1">
-          <li> <%= link_to "Help", root_path  %> </li>
-          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
-          <li> <%= link_to "Profile", profile_path  %> </li>
+          <li> <%= link_to "Help", root_path, class: "navbar-links"  %> </li>
+          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-links"  %> </li>
+          <li> <%= link_to "Profile", profile_path, class: "navbar-links"  %> </li>
           <% if current_user.profile.is_host %>
             <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
           <% else %>
@@ -21,9 +21,9 @@
 
         <div>
          <ul class="nav navbar-nav pull-right test1">
-          <li> <%= link_to "Help", root_path %> </li>
-          <li> <%= link_to "Login", user_session_path %> </li>
-          <li> <%= link_to "Sign up",  new_user_registration_path %> </li>
+          <li> <%= link_to "Help", root_path, class: "navbar-links" %> </li>
+          <li> <%= link_to "Login", user_session_path, class: "navbar-links" %> </li>
+          <li> <%= link_to "Sign up",  new_user_registration_path, class: "navbar-links" %> </li>
           <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
         </div>
       <% end %>
