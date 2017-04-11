@@ -22,6 +22,7 @@ Show Booking
         <p>Cost (cents): <%= @booking.rent_cost_cents %> </p>
         <p>Amount: <%= humanized_money_with_symbol(@total_price) %></p>
 
+
         <% if current_user === @booking.profile_id %>
         <%= link_to edit_booking_path do %>
         <i class="fa fa-pencil-square-o fa-3x"></i>

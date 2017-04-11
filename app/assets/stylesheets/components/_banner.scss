@@ -1,11 +1,44 @@
+// .banner-container {
+//   width: 1400px;
+//   padding: 15px 50px 15px 50px;
+//   background: yellow;
+// }
+
+div.header_div{
+  display:table;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 15px 50px 15px 50px;
+}
+
+div.right{
+  display: inline-block;
+  /*float: right; */
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+
+.inner {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  background: yellow;
+  padding: 3px 5px !important;
+}
+
+.block2 {
+  background: orange;
+  height: 80px;
+}
+
 .banner {
   color: white;
-  text-align: center;
-  height: 100vh;
+  // text-align: center;
+  height: 800px;
   background-size: cover !important;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
 }
 
 .banner h1 {
@@ -15,7 +48,7 @@
 }
 
 .title {
-  color: black;
+  color: #191919;
   text-align: left;
   height: 50vh;
   align-items: center;
@@ -49,7 +82,6 @@
 .title-h3 {
   margin-top: 100px;
 }
-
 
 .banner p {
   font-size: 25px;
@@ -102,23 +134,21 @@
   margin-bottom: 20px;
 }
 
-
 .wrap {
-    width: 100%;
-    overflow:auto;
+width: 100vw;
+display: flex;
+justify-content: space-between;
 }
-
-.fleft {
-  float: left;
-  width: 50%;
-  background: white;
-  height: 800px;
-}
-
 
 
 .fright {
   float: right;
   width: 50%;
+  height: 800px;
+}
+
+.fleft {
+flex: 0 0 50%;
+  background: white;
   height: 800px;
 }
