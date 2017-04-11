@@ -114,6 +114,19 @@ div.right{
   border: 2px solid #2176FF;
 }
 
+// .banner .btn {
+//   background-color: #C4BF9C;
+//   opacity: 0.95;
+//   border: 1px solid;
+//   border-radius: 0.5em;
+// }
+
+.banner .btn:hover {
+  color: red;
+  background: #8C865F;
+  border-color: #8C865F;
+}
+
 .banner p {
   font-size: 20px;
   font-weight: lighter;

@@ -1,5 +1,5 @@
 <div class="wrap" style="padding-top: 0px">
-  <div class="fleft" style="width: 40%; padding: 30px">
+  <div class="fleft" style="width: 40%; margin-top: 50px; padding-right: 50px; padding-left: 50px ">
           <div class="panel panel-primary">
             <div class="panel-heading text-center">Profile</div>
             <div class="panel-body text-center">
@@ -17,17 +17,16 @@
               <p>Birth Date: <%= current_user.profile.birth_date %> </p>
 
               <br>
-              <%= link_to edit_profile_path do %>
+<!--               <#%= link_to edit_profile_path do %>
               <i class="fa fa-pencil-square-o fa-3x"></i>
-              <% end %>
+              <#% end %> -->
+              <%= link_to "Edit", edit_profile_path, class: "btn btn-primary" %>
               <br>
 
             </div>
           </div>
           <div class="text-center">
-            <%= link_to root_path do %>
-            <i class="fa fa-chevron-left fa-5x"></i>
-            <% end %>
+            <%= link_to "Back", root_path, class: "btn btn-primary" %>
           </div>
 
   </div>
@@ -45,14 +44,15 @@
                   <div class="card-category">
                      <%= listing.name %>
                   </div>
+
                   <div class="card-description">
-                     <%= listing.description %>
+                     <%= listing.location %>
                   </div>
-                  <% if current_user.facebook_picture_url.nil? %>
-                    <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
-                  <% else %>
-                    <%= image_tag current_user.profile.photo, class: "card-user avatar avatar-large" %>
-                  <% end %>
+
+                  <div class="card-user">
+                    <p> €<%= listing.price %> </p>
+                    <p> <%= listing.type_place %> </p>
+                  </div>
 
                </div>
              <% end %>
