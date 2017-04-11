@@ -43,17 +43,18 @@ $('#new-contract').click(function() {
 
 
 function update_booking_status(new_status){
-  var listing_id = window.location.href.split("/")[4];
-  var ref_value = $('#ref').val();
-  $.ajax({
-    url: '/bookings/mark_as_available_to_pay',
-    type: 'put'
-    error: function(data){
-      alert('Error occurred while updating the record.');
-    },
-    success: function(data){
-      alert('Record updated successfully.');
-    }
-  });
-    return false;
+  return true;
+  // var listing_id = window.location.href.split("/")[4];
+  // var ref_value = $('#ref').val();
+  // $.ajax({
+  //   url: '/bookings/mark_as_available_to_pay',
+  //   type: 'put'
+  //   error: function(data){
+  //     alert('Error occurred while updating the record.');
+  //   },
+  //   success: function(data){
+  //     alert('Record updated successfully.');
+  //   }
+  // });
+  //   return false;
 }

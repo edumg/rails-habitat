@@ -24,4 +24,5 @@
 //= require navbar
 //= require bookings
 //= require profile
+//= require flash
 

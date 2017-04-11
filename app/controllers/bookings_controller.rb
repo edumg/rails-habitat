@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :delete]
   before_action :set_current_user
-  before_action :set_listing_by_id, only: [:new, :create]
+  before_action :set_listing_by_id, only: [:new, :create, :index]
 
   def index
     @bookings = Booking.all
@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     if params[:listing_id]
       @list_book_path = true
       # get bookings of a listing
-      @listing_bookings = Booking.where(listing_id: @listing.id)
+      @listing_bookings = Booking.where(listing_id: params[:listing_id])
       @foo_attr = { "data-foo-1" => 1, "data-foo-2" => 2 }
     end
 
