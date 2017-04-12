@@ -14,7 +14,7 @@
            <% @questions.each do |question| %>
              <%= link_to :anchor => "wall" do %>
                <div class="col-xs-6 col-sm-6 col-md-1", style="margin-right: 25px; display:block">
-                 <h6 style="width: 100px">Question <%= question.id %></h6>
+                 <h6 id="persona-question-id-<%= question.id %>", style="width: 100px">Question <%= question.id %></h6>
                  <%= link_to "",  new_personality_path, class: "btn btn-primary", style: "heigth: 1px; border-radius: 30px; width: 100px" %>
                </div>
              <% end %>
@@ -26,18 +26,42 @@
 
        <div class="container">
          <div class="col-xs-6 col-sm-4 col-md-6">
-           <%= cl_image_tag "party_nv0ts7", class: "personality_photo", id:"persona_img_1"%>
-           <%= cl_image_tag "john-sting-112628_urpf9v", class: "personality_photo", id:"persona_img_2"%>
-           <%= cl_image_tag "File1_txtgha", class: "personality_photo", id:"persona_img_3" %>
-           <%= cl_image_tag "File3_azp3hb", class: "personality_photo", id:"persona_img_4" %>
-           <%= cl_image_tag "File2_uxpdvw", class: "personality_photo", id:"persona_img_5" %>
-           <%= cl_image_tag "File4_lmvfil", class: "personality_photo", id:"persona_img_6" %>
+           <div id="img-question-1">
+             <%= cl_image_tag "party_nv0ts7", class: "personality_photo", id:"persona_img_1_q1"%>
+             <%= cl_image_tag "john-sting-112628_urpf9v", class: "personality_photo", id:"persona_img_2_q1"%>
+             <%= cl_image_tag "File1_txtgha", class: "personality_photo", id:"persona_img_3_q1" %>
+             <%= cl_image_tag "File2_uxpdvw", class: "personality_photo", id:"persona_img_5_q1" %>
+             <%= cl_image_tag "File4_lmvfil", class: "personality_photo", id:"persona_img_6_q1" %>
+             <%= cl_image_tag "File3_azp3hb", class: "personality_photo", id:"persona_img_4_q1" %>
+           </div>
 
+           <div id="img-question-2" class="hidden">
+             <%= cl_image_tag "File1_txtgha", class: "personality_photo", id:"persona_img_3_q2" %>
+             <%= cl_image_tag "party_nv0ts7", class: "personality_photo", id:"persona_img_1_q2"%>
+             <%= cl_image_tag "File3_azp3hb", class: "personality_photo", id:"persona_img_4_q2" %>
+             <%= cl_image_tag "john-sting-112628_urpf9v", class: "personality_photo", id:"persona_img_2_q2"%>
+             <%= cl_image_tag "File4_lmvfil", class: "personality_photo", id:"persona_img_6_q2" %>
+             <%= cl_image_tag "File2_uxpdvw", class: "personality_photo", id:"persona_img_5_q2" %>
+           </div>
+
+           <div id="img-question-3" class="hidden">
+             <%= cl_image_tag "john-sting-112628_urpf9v", class: "personality_photo", id:"persona_img_2_q3"%>
+             <%= cl_image_tag "party_nv0ts7", class: "personality_photo", id:"persona_img_1_q3"%>
+             <%= cl_image_tag "File1_txtgha", class: "personality_photo", id:"persona_img_3_q3" %>
+             <%= cl_image_tag "File3_azp3hb", class: "personality_photo", id:"persona_img_4_q3" %>
+             <%= cl_image_tag "File2_uxpdvw", class: "personality_photo", id:"persona_img_5_q3" %>
+             <%= cl_image_tag "File4_lmvfil", class: "personality_photo", id:"persona_img_6_q3" %>
+           </div>
          </div>
        </div>
        <br>
-         <%= link_to "Next", root_path, class: "btn btn-primary hidden pull-right", id: "button-next"  %>
-
+         <div class="btn btn-primary hidden pull-right", id="button-next">
+         Next
+         </div>
+             <div class="btn btn-primary hidden pull-right", id="button-done">
+         Done
+         </div>
+          <%#= link_to "Done", new_personality_path, class: "btn btn-primary hidden pull-right", id:"button-done" %>
      </div>
 
    </div>

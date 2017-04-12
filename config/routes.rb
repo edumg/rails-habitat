@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
  # resources :personality_storages
 
- resources :personality
+ resources :personality do
+  collection do
+    get 'done'
+   end
+ end
 
  root to: 'pages#home'
 

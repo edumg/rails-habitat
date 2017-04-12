@@ -1,6 +1,6 @@
 class PersonalityController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!, only: [:new, :done]
   before_action :get_session_id, only: [:create, :edit, :update, :destroy]
 
   def show
@@ -17,6 +17,10 @@ class PersonalityController < ApplicationController
 
   def new
     @questions = Question.all
+  end
+
+  def done
+    @results = params[:results].split(',')
   end
 
   def create

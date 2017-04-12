@@ -1,7 +1,6 @@
 $(window).scroll(function() {
   //behavior homepage
   if(window.location.href.split("/")[3] == "") {
-    console.log($(this).scrollTop());
     if($(this).scrollTop() < 50){
       $('#navbar-master').removeClass('opaque');
       $('.navbar-inverse .navbar-nav>li>a').css('color', 'black');
