@@ -1,10 +1,28 @@
 <div id="date_picker">
 <%= simple_form_for [@listing, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <h3>Price</h3>
-  €<%= @listing.price %>
   <br>
-  <%= f.submit "Create Booking", class: "btn btn-primary" %>
+  <br>
+  <div class="row">
+
+    <div class="col-md-6">
+    <%= f.input :start_date, as: :string, input_html: {class: "datepicker", value: @booking.start_date.strftime("%d/%m/%Y")} %>
+
+    <%= f.input :end_date, as: :string, input_html: {class: "datepicker", value: @booking.end_date.strftime("%d/%m/%Y")} %>
+    </div>
+  </div>
+
+
+
+
+
+  <br>
+  <h3 class="total-price">Total Price:</h3>
+  <p id="price">
+    €<%= @listing.price %>
+  </p>
+  <br>
+  <br>
+  <br>
+  <%= f.submit "Confirm Booking request", class: "btn btn-primary banner-button" %>
 <% end %>
 </div>

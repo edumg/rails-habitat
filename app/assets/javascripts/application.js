@@ -26,4 +26,7 @@
 //= require profile
 //= require flash
 //= require personality
+//= require bootstrap-datepicker
+//= require datepicker
+
 

@@ -18,33 +18,35 @@ Show Listing
       <div class="block">
         <div class="section-title">
           <h2>
-            €<%= @listing.price %> <%= @listing.name %>
+            €<%= @listing.price %>/m <%= @listing.name %>
           </h2>
 
           <p>
             <%= @listing.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.
           </p>
 
+          <br>
+
+          <p>
+            <strong>Listing type:</strong> <%= @listing.type_place %>
+          </p>
+
         </div>
 
 
-          <div>
+        <div>
           <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
-          </div>
+        </div>
+      </div>
 
-
-
-
-          <!-- <div class="container">
-          <div class="row"> -->
+    <div class="row">
 
           <!-- PICTURES -->
-          <div>
             <h3 class="pictures-title">
               Pictures
             </h3>
             <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
 
                 <a class="card-link" href="#" ></a>
               </div>
@@ -52,7 +54,7 @@ Show Listing
 
 
               <div class="col-xs-12 col-sm-4">
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
 
                   <a class="card-link" href="#" ></a>
                 </div>
@@ -61,18 +63,18 @@ Show Listing
 
 
               <div class="col-xs-12 col-sm-4">
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
 
                   <a class="card-link" href="#" ></a>
                 </div>
               </div>
 
-            </div>
+          </div>
+        <br>
+        <br>
+        <br>
 
-            <!-- PICTURES -->
-
-            <!-- AMENITIES -->
-
+        <div class="row">
           <div class="col-xs-12">
             <h3 class="amenities-title">
               Amenities
@@ -94,11 +96,12 @@ Show Listing
 
             </div>
           </div>
+          </div>
 
           <!-- AMENITIES -->
 
              <!-- RULES -->
-
+        <div class="row">
           <div class="col-xs-12">
             <h3 class="amenities-title">
               Rules
@@ -120,20 +123,13 @@ Show Listing
 
             </div>
           </div>
-
-          <!-- RULES -->
-
-
-          </div>
         </div>
 
 
 
+</div>
 
-
-
-
-    <div class="col-md-5 col-sm-12">
+<div class="col-sm-12 col-md-5 ">
             <div class="container-owner">
             <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar">
               <!-- <img src="img/wrapper-img.gif" alt="Img"> -->
@@ -148,7 +144,29 @@ Show Listing
 
             </div>
           </div>
+
+          </div>
+
+
+
+
+
+
+            <!-- PICTURES -->
+
+            <!-- AMENITIES -->
+
+    </div>
+
+
+
+
+
+
+
+
   </div>
+</div>
 </div>
 
 
@@ -158,59 +176,6 @@ Show Listing
 
 
 
-   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-        <div class="text-center">
-          <h1><%= @listing.name %></h1>
-
-          <p>name: <%= @listing.name %> </p>
-          <p>description: <%= @listing.description %> </p>
-          <p>location: <%= @listing.location %> </p>
-          <p>owner: <%= @listing.profile.first_name %> <%= @listing.profile.last_name %></p>
-          <p>owner id: <%= @listing.profile.id %></p>
-          <p>price: <%= @listing.price %> </p>
-          <p>amenities: <%= @listing.amenities %> </p>
-          <p>rules: <%= @listing.rules %> </p>
-          <p>type of place: <%= @listing.type_place %> </p>
-          <p>number of rooms: <%= @listing.num_rooms %> </p>
-
-          <% if current_user === @listing.profile_id %>
-          <%= link_to edit_listing_path do %>
-          <i class="fa fa-pencil-square-o fa-3x"></i>
-          <% end %>
-
-          <%= link_to listing_path(@listing), method: :delete  do %>
-          <i class="fa fa-trash fa-3x"></i>
-          <% end %>
-          <% end %>
-
-          <%= link_to new_listing_questionnaire_path(@listing.id) do %>
-            <h4>Create Personality Test</h4>
-          <% end %>
-
-          <%= link_to new_listing_booking_path(@listing), controller: "listing", action: "verify" do %>
-            <i class="fa fa-book fa-5x"></i>
-          <% end %>
-
-
-
-          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg banner-button"  %>
-
-
-          <br>
-          <br>
-          <br>
-
-          <%= link_to @back_url  do %>
-          <i class="fa fa-chevron-left fa-5x"></i>
-          <% end %>
-
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 <% content_for(:after_js) do %>
