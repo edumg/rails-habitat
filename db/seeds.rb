@@ -43,12 +43,12 @@ Photo.destroy_all
 # Personalitystorage.destroy_all
 # Questionnaire.destroy_all
 
-images_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File1_txtgha",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File3_azp3hb",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File4_lmvfil",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File2_uxpdvw"]
+images_url = ["//res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
+"//res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
+"//res.cloudinary.com/dc2fg86gy/image/upload/File1_txtgha",
+"//res.cloudinary.com/dc2fg86gy/image/upload/File3_azp3hb",
+"//res.cloudinary.com/dc2fg86gy/image/upload/File4_lmvfil",
+"//res.cloudinary.com/dc2fg86gy/image/upload/File2_uxpdvw"]
 
 #images_url = ["party_nv0ts7", "john-sting-112628_urpf9v", "File1_txtgha", "File2_uxpdvw", "File4_lmvfil", "File3_azp3hb"]
 images_url.each do |img|
