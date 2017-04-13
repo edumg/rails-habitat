@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   def show
     @back_url = session[:my_previous_url]
     @listings = current_user.profile.listings
+    @person_results = Personalitystorage.where session: session.id
   end
 
   def update

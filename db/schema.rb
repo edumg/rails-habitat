@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411223837) do
+ActiveRecord::Schema.define(version: 20170412150357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,13 +133,14 @@ ActiveRecord::Schema.define(version: 20170411223837) do
     t.index ["question_id"], name: "index_personalities_on_question_id", using: :btree
   end
 
-  create_table "personality_storages", force: :cascade do |t|
+  create_table "personalitystorages", force: :cascade do |t|
     t.integer  "question_id"
-    t.text     "answers",     default: "--- []\n"
     t.string   "session"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.index ["question_id"], name: "index_personality_storages_on_question_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "answer_id"
+    t.index ["answer_id"], name: "index_personalitystorages_on_answer_id", using: :btree
+    t.index ["question_id"], name: "index_personalitystorages_on_question_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -169,6 +170,7 @@ ActiveRecord::Schema.define(version: 20170411223837) do
     t.string   "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "id_alt"
   end
 
   create_table "users", force: :cascade do |t|

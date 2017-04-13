@@ -24,7 +24,6 @@
         <p>rules: <%= @listing.rules %> </p>
 
         <% if @listing.bookings.find_by profile_id: current_user.profile.id %>
-          <p style="color: red">_</p>
         <% else %>
           <p>_</p>
         <% end %>
