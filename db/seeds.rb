@@ -31,10 +31,13 @@
 Answer.destroy_all
 Question.destroy_all
 Photo.destroy_all
+Booking.destroy_all
+Listing.destroy_all
+
+
 Profile.destroy_all
 User.destroy_all
-Listing.destroy_all
-Booking.destroy_all
+
 Orders.destroy_all
 Personality.destroy_all
 Personalitystorage.destroy_all
