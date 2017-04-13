@@ -38,7 +38,7 @@ Listing.destroy_all
 Profile.destroy_all
 User.destroy_all
 
-Orders.destroy_all
+Order.destroy_all
 Personality.destroy_all
 Personalitystorage.destroy_all
 Questionnaire.destroy_all
