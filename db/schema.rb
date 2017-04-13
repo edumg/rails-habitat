@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413090408) do
+ActiveRecord::Schema.define(version: 20170413115125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,14 @@ ActiveRecord::Schema.define(version: 20170413090408) do
     t.index ["question_id"], name: "index_personalitystorages_on_question_id", using: :btree
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_photos_on_listing_id", using: :btree
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -218,4 +226,5 @@ ActiveRecord::Schema.define(version: 20170413090408) do
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "personalities", "profiles"
   add_foreign_key "personalities", "questions"
+  add_foreign_key "photos", "listings"
 end

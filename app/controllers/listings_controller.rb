@@ -33,7 +33,7 @@ class ListingsController < ApplicationController
     @back_url = session[:my_previous_url]
     @alert_message = "You are viewing #{@listing.name}"
     @listing_coordinates = { lat: @listing.latitude, lng: @listing.longitude }
-
+    @photos = Photo.where listing_id: @listing.id
   end
 
   def update

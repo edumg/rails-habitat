@@ -30,6 +30,7 @@
 
 Answer.destroy_all
 Question.destroy_all
+Photo.destroy_all
 
 images_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
 "http://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
@@ -66,11 +67,27 @@ Listing.all.each do |listing|
 end
 
 
+photos_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror8_dam0uq",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror6_qsnbho",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror3_uwylg4",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror9_bibeub",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror5_fjsf3q",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/
+inteiror1_iyef8n",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror7_a0jswc",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/
+inteiror4_fgl8nt"]
 
 
 
-
-
+Listing.all.each do |listing|
+  (1..3).each do |_|
+    new_photo = Photo.new
+    new_photo.photo = photos_url[rand(photos_url.length)]
+    new_photo.listing_id = listing.id
+    new_photo.save
+  end
+end
 
 
 

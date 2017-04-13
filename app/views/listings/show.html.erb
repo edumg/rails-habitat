@@ -3,7 +3,7 @@ Show Listing
 <% end %>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 200, width: 400, crop: :fill %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 100, width: 400, crop: :fill %>');">
   <!-- <div class="banner-content">
     <h1>Some Stuff</h1>
     <p>Very cool stuff, useful and smart</p>
@@ -22,14 +22,14 @@ Show Listing
           </h2>
 
           <p>
-        <!--     <%#= @listing.description %> -->
+            <%= @listing.description %>
           </p>
 
         </div>
 
           <div>
           <% if user_signed_in? %>
-           <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button"  %>
+           <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button2"  %>
           <% else %>
            <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
           <% end %>
@@ -40,31 +40,16 @@ Show Listing
             <h3 class="pictures-title">
               Pictures
             </h3>
-            <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
 
-                <a class="card-link" href="#" ></a>
-              </div>
-            </div>
-
-
+            <% @photos.each do |photo| %>
               <div class="col-xs-12 col-sm-4">
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= photo.photo %>');">
 
                   <a class="card-link" href="#" ></a>
                 </div>
               </div>
-
-
-
-              <div class="col-xs-12 col-sm-4">
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-
-                  <a class="card-link" href="#" ></a>
-                </div>
-              </div>
-
-            </div>
+            <% end %>
+          </div>
 
             <!-- PICTURES -->
 
