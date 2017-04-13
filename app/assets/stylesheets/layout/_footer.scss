@@ -1,5 +1,5 @@
 #footer {
-  background-color: #333333;
+  background-color: #F7F7F7;
   color: #CCCCCC;
   font-size: 25px;
   padding: 30px 0;
@@ -7,14 +7,38 @@
 
 #footer p {
   font-size: 15px;
-  margin-top: 12px;
+  margin-top: 4px;
+  color: #46237A;
+  font-weight: 600;
 }
 
 #footer a {
-  text-decoration: none;
-  color: #CCCCCC;
+  color: #8e8e8e;
+  font-size:14px;
+  line-height:22px;
+  font-weight:300;
+  text-decoration:none;
+  display:block;
 }
 
 #footer a:hover {
-    color: #756A66;
+  text-decoration:underline;
   }
+
+#footer-section {
+  position: relative;
+  padding:0px 0px 0px 0px;
+  left: 160px;
+  margin-right: 10px;
+}
+
+.footer-group {
+  float:left;
+  margin:0px 80px 0px 0px;
+}
+
+
+
+
+
+

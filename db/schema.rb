@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 20170411223837) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "num_guests"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.float    "rent_cost"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "minimum_stay"
-    t.integer  "rent_cost_cents"
-    t.integer  "price_cents",     default: 0, null: false
+    t.integer  "price_cents",  default: 0, null: false
     t.string   "sku"
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
@@ -121,16 +121,6 @@ ActiveRecord::Schema.define(version: 20170411223837) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.string   "state"
-    t.string   "booking_sku"
-    t.integer  "amount_cents",    default: 0,     null: false
-    t.string   "amount_currency", default: "USD", null: false
-    t.json     "payment"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
   end
 
   create_table "personalities", force: :cascade do |t|
