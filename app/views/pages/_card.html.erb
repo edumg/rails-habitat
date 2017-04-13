@@ -2,57 +2,40 @@
 
   <%= link_to listing_path(listing) do %>
 
-  <div class="card" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
-  <% if listing.profile.user.facebook_picture_url.nil? %>
-      <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
-    <% else %>
-      <%= image_tag listing.profile.user.facebook_picture_url, class: "card-user avatar avatar-large" %>
-    <% end %>
-  </div>
+    <div class="card" style="background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
+      <% if listing.profile.user.facebook_picture_url.nil? %>
+        <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
+      <% else %>
+        <%= image_tag listing.profile.user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+      <% end %>
+    </div>
 
-  <div class="card-category">
+    <div class="card-description">
       <strong>€<%= listing.price%></strong>
       <%= listing.name %>
     </div>
-    <div class="card-description">
-      <%= listing.description %>
-    </div>
-
 
   <% end %>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- original code (don't delete it) -->
 
 <!-- <div class="col-xs-12 col-sm-4">
-  <%= link_to listing_path(listing) do %>
-  <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
+  <%#= link_to listing_path(listing) do %>
+  <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
     <div class="card-category">
-      <%= listing.name %>
+      <%#= listing.name %>
     </div>
     <div class="card-description">
-      <%= listing.description %>
+      <%#= listing.description %>
     </div>
-    <% if listing.profile.user.facebook_picture_url.nil? %>
-      <%= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
-    <% else %>
-      <%= image_tag listing.profile.user.facebook_picture_url, class: "card-user avatar avatar-large" %>
-    <% end %>
+    <%# if listing.profile.user.facebook_picture_url.nil? %>
+      <%#= cl_image_tag 'user_gqomus', class: "card-user avatar avatar-large" %>
+    <%# else %>
+      <%#= image_tag listing.profile.user.facebook_picture_url, class: "card-user avatar avatar-large" %>
+    <%# end %>
   </div>
-  <% end %>
+  <%# end %>
 </div>
  -->
 
