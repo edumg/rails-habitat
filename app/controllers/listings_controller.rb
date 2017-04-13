@@ -33,7 +33,9 @@ class ListingsController < ApplicationController
     @back_url = session[:my_previous_url]
     @alert_message = "You are viewing #{@listing.name}"
     @listing_coordinates = { lat: @listing.latitude, lng: @listing.longitude }
-    @photos = Photo.where listing_id: @listing.id
+
+    # @photos = Photo.where listing_id: @listing.id
+    @photos = get_photos()
   end
 
   def update
@@ -53,6 +55,15 @@ class ListingsController < ApplicationController
   end
 
   private
+
+  def get_photos
+    photos = []
+    (1..3).each do |_|
+      photos << Photo.all.sample
+    end
+
+    return photos
+  end
 
   def warning_person_test
     @questionnaire = Questionnaire.find_by listing_id: Listing.find(params[:id])
