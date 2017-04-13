@@ -27,7 +27,6 @@ class ConversationsController < ApplicationController
   end
 
   def mark_as_read
-    raise
     conversation.mark_as_read(current_user)
     redirect_to mailbox_inbox_path
   end

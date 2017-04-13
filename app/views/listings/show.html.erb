@@ -3,7 +3,7 @@ Show Listing
 <% end %>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 100, width: 400, crop: :fill %>');">
+<div class="banner" style="height: 400px !important; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 100, width: 400, crop: :fill %>');">
   <!-- <div class="banner-content">
     <h1>Some Stuff</h1>
     <p>Very cool stuff, useful and smart</p>
@@ -115,7 +115,12 @@ Show Listing
     <div class="col-md-5 col-sm-12">
 
             <div class="container-owner">
-            <%= cl_image_tag current_user.profile.photo, alt: "Img", class: "owner-avatar" %>
+            <% if @listing.profile.user.facebook_picture_url %>
+              <%= cl_image_tag @listing.profile.user.facebook_picture_url, alt: "Img", class: "owner-avatar" %>
+            <% else %>
+              <%= cl_image_tag @listing.profile.photo, alt: "Img", class: "owner-avatar" %>
+            <% end %>
+
 <!--             <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar"> -->
               <!-- <img src="img/wrapper-img.gif" alt="Img"> -->
               <h3 class="owner-name">

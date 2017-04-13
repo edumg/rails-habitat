@@ -1,7 +1,7 @@
 <div class="wrap" style="padding-top: 0px">
   <div class="fleft" style="width: 40%; padding: 30px">
   <br>
-    <div class="banner" style="padding-top: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 500, width: 400, crop: :fill %>');">
+    <div class="banner" style="padding-top: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 400, width: 600, crop: :fill %>');">
 
        <div class="container">
         <div class="row">
@@ -11,7 +11,7 @@
               <h1> <%= @listing.name %> </h1>
 
               <p>name: <%= @listing.name %> </p>
-              <p>description: <%= @listing.description %> </p>
+              <!-- <p>description: <%#= @listing.description %> </p> -->
               <p>location: <%= @listing.location %> </p>
               <p>owner: <%= @listing.profile.first_name %> <%= @listing.profile.last_name %></p>
               <p>owner id: <%= @listing.profile.id %></p>
@@ -24,11 +24,12 @@
               <br>
               <br>
 
-              <%= link_to @back_url  do %>
+      <!--         <%#= link_to @back_url  do %>
               <i class="fa fa-chevron-left fa-5x" style="margin-bottom: 100px" ></i>
-              <% end %>
+              <%# end %> -->
 
             </div>
+            <%= link_to "Back", root_path, class: "btn btn-primary" %>
           </div>
         </div>
       </div>
