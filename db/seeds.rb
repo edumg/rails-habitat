@@ -31,17 +31,17 @@
 Answer.destroy_all
 Question.destroy_all
 Photo.destroy_all
-Booking.destroy_all
-Listing.destroy_all
+# Booking.destroy_all
+# Listing.destroy_all
 
 
-Profile.destroy_all
-User.destroy_all
+# Profile.destroy_all
+# User.destroy_all
 
-Order.destroy_all
-Personality.destroy_all
-Personalitystorage.destroy_all
-Questionnaire.destroy_all
+# Order.destroy_all
+# Personality.destroy_all
+# Personalitystorage.destroy_all
+# Questionnaire.destroy_all
 
 images_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
 "http://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
