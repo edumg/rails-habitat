@@ -69,8 +69,9 @@ class ListingsController < ApplicationController
   end
 
   def warning_person_test
-    @questionnaire = Questionnaire.find_by listing_id: Listing.find(params[:id])
-    if @questionnaire.nil?
+    listing = Listing.find(params[:id])
+    @questionnaire = Questionnaire.find_by listing_id: listing
+    if @questionnaire.nil? and @user.id == listing.profile.id
       flash['alert'] = "Personality test is missing!"
     end
   end
