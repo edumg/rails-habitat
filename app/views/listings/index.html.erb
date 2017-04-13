@@ -21,9 +21,6 @@ Show Listings
               <%= listing.name %>
             </div>
 
-            <div class="card-description">
-              <%= listing.description %>
-            </div>
 
             <% if current_user.facebook_picture_url.nil? %>
               <%= cl_image_tag current_user.profile.photo, class: "card-user avatar avatar-large" %>
