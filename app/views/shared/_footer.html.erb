@@ -2,17 +2,61 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4">
-        <ul class="list-inline">
-          <li><%= icon('facebook') %></li>
-          <li><%= icon('youtube') %></li>
-          <li><%= icon('twitter') %></li>
-          <li><%= icon('instagram') %></li>
-          <li><%= icon('envelope-o') %></li>
-        </ul>
+      <%= link_to root_path do %>
+          <%= cl_image_tag "habitat_logo_1_nyescm", style: "width:150px" %>
+          <% end %>
+          <p>Matchmaking home rental</p>
       </div>
-      <div class="col-xs-8 text-right">
-        <p><%= link_to 'About us' %> | <%= link_to 'List Your Table' %> | <%= link_to 'How It Works' %> | <%= link_to 'Terms & Conditions' %> | <%= link_to 'Help' %></p>
+
+
+      <div id="footer-section">
+
+          <div class="footer-group">
+            <p>About</p>
+            <a href="">About us</a>
+            <a href="">Terms/Conditions</a>
+          </div>
+
+          <div class="footer-group">
+            <p>How it works</p>
+            <a href="">The match</a>
+            <a href="">Pricing</a>
+            <a href="">Contract suport</a>
+          </div>
+
+          <div class="footer-group">
+            <p>Help</p>
+            <a href="">FAQ</a>
+            <a href="">Support</a>
+          </div>
+
+          <div class="footer-group">
+            <p>Contact</p>
+            <a href="">Email</a>
+            <a href="">Facebook</a>
+            <a href="">Twitter</a>
+            <a href="">LinkedIn</a>
+            <a href="">Instagram</a>
+          </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

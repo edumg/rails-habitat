@@ -3,14 +3,167 @@ Show Listing
 <% end %>
 
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>');">
+  <!-- <div class="banner-content">
+    <h1>Some Stuff</h1>
+    <p>Very cool stuff, useful and smart</p>
+    <a class="btn btn-primary btn-lg">GET IT</a>
+  </div> -->
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+      <div class="block">
+        <div class="section-title">
+          <h2>
+            €<%= @listing.price %> <%= @listing.name %>
+          </h2>
+
+          <p>
+            <%= @listing.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.
+          </p>
+
+        </div>
+
+
+          <div>
+          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
+          </div>
+
+
+
+
+          <!-- <div class="container">
+          <div class="row"> -->
+
+          <!-- PICTURES -->
+          <div>
+            <h3 class="pictures-title">
+              Pictures
+            </h3>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+
+                <a class="card-link" href="#" ></a>
+              </div>
+            </div>
+
+
+              <div class="col-xs-12 col-sm-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+
+                  <a class="card-link" href="#" ></a>
+                </div>
+              </div>
+
+
+
+              <div class="col-xs-12 col-sm-4">
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+
+                  <a class="card-link" href="#" ></a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- PICTURES -->
+
+            <!-- AMENITIES -->
+
+          <div class="col-xs-12">
+            <h3 class="amenities-title">
+              Amenities
+            </h3>
+            <div class="container-amenities">
+
+              <p>
+                <%= @listing.amenities %>
+              </p>
+              <p>
+                <%= @listing.amenities %>
+              </p>
+              <p>
+                <%= @listing.amenities %>
+              </p>
+              <p>
+                <%= @listing.amenities %>
+              </p>
+
+            </div>
+          </div>
+
+          <!-- AMENITIES -->
+
+             <!-- RULES -->
+
+          <div class="col-xs-12">
+            <h3 class="amenities-title">
+              Rules
+            </h3>
+            <div class="container-amenities">
+
+              <p>
+                <%= @listing.rules %>
+              </p>
+              <p>
+                <%= @listing.rules %>
+              </p>
+              <p>
+                <%= @listing.rules %>
+              </p>
+              <p>
+                <%= @listing.rules %>
+              </p>
+
+            </div>
+          </div>
+
+          <!-- RULES -->
+
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+    <div class="col-md-5 col-sm-12">
+            <div class="container-owner">
+            <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar">
+              <!-- <img src="img/wrapper-img.gif" alt="Img"> -->
+              <h3 class="owner-name">
+                <strong>Owner:</strong>
+                <%= @listing.profile.first_name %> <%= @listing.profile.last_name %>
+                <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button"  %>
+              </h3>
+              <p>
+                Super easy going, loves a good classic rock n roll while having some beers. Works in a tech company and enjoy watching some TED talks from time to time.
+              </p>
+
+            </div>
+          </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 
    <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
         <div class="text-center">
-          <h1> <%= @listing.name %> </h1>
+          <h1><%= @listing.name %></h1>
 
           <p>name: <%= @listing.name %> </p>
           <p>description: <%= @listing.description %> </p>
@@ -41,6 +194,11 @@ Show Listing
             <i class="fa fa-book fa-5x"></i>
           <% end %>
 
+
+
+          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg banner-button"  %>
+
+
           <br>
           <br>
           <br>
@@ -53,7 +211,7 @@ Show Listing
       </div>
     </div>
   </div>
-</div>
+
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
