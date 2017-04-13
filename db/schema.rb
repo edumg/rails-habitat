@@ -126,11 +126,10 @@ ActiveRecord::Schema.define(version: 20170413115125) do
   create_table "orders", force: :cascade do |t|
     t.string   "state"
     t.string   "booking_sku"
-    t.integer  "amount_cents",    default: 0,     null: false
-    t.string   "amount_currency", default: "USD", null: false
+    t.integer  "amount_cents", default: 0, null: false
     t.json     "payment"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "personalities", force: :cascade do |t|
