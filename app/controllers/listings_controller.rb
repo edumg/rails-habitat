@@ -49,8 +49,8 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.all
-   # @listings = Listing.where.not(latitude: nil, longitude: nil)
+    #@listings = Listing.all
+    @listings = Listing.where.not(latitude: nil, longitude: nil)
   end
 
   private

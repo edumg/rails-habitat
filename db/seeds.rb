@@ -31,17 +31,16 @@
 Answer.destroy_all
 Question.destroy_all
 Photo.destroy_all
-# Booking.destroy_all
-# Listing.destroy_all
+Booking.destroy_all
+Listing.destroy_all
 
+Profile.destroy_all
+User.destroy_all
 
-# Profile.destroy_all
-# User.destroy_all
-
-# Order.destroy_all
-# Personality.destroy_all
-# Personalitystorage.destroy_all
-# Questionnaire.destroy_all
+Order.destroy_all
+Personality.destroy_all
+Personalitystorage.destroy_all
+Questionnaire.destroy_all
 
 images_url = ["https://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
 "https://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
@@ -65,28 +64,33 @@ end
   new_question.save
 end
 
-# Profile.all.each do |profile|
-#   upd = profile
-#   upd.description = "Super easy going, loves a good classic rock n roll while having some beers. Works in a tech company and enjoy watching some TED talks from time to time."
-#   upd.save
-# end
+Profile.all.each do |profile|
+  upd = profile
+  upd.description = "Super easy going, loves a good classic rock n roll while having some beers. Works in a tech company and enjoy watching some TED talks from time to time."
+  upd.save
+end
 
-# Listing.all.each do |listing|
-#   upd = listing
-#   upd.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id."
-#   upd.save
-# end
+Listing.all.each do |listing|
+  upd = listing
+  upd.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id."
+  upd.save
+end
 
 
-# photos_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror8_dam0uq",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror6_qsnbho",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror3_uwylg4",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror9_bibeub",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror5_fjsf3q",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror1_iyef8n",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror7_a0jswc",
-# "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror4_fgl8nt"]
+photos_url = ["https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror8_dam0uq",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror6_qsnbho",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror3_uwylg4",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror9_bibeub",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror5_fjsf3q",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror1_iyef8n",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror7_a0jswc",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/inteiror4_fgl8nt"]
 
+photos_url.each do |photo|
+  new_ph = Photo.new
+  new_ph.photo = photo
+  new_ph.save
+end
 
 
 # Listing.all.each do |listing|
