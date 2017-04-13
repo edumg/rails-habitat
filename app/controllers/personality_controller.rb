@@ -1,7 +1,7 @@
 class PersonalityController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: :new
-  before_action :get_session_id, only: [:create, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:new, :done]
+  before_action :get_session_id, only: [:create, :edit, :update, :destroy, :done]
 
   def show
   end
@@ -19,6 +19,22 @@ class PersonalityController < ApplicationController
     @questions = Question.all
   end
 
+  def done
+    @results = params[:results].split(',')
+
+    @results.each do |result|
+      puts result
+      @answer = Answer.find_by photo: result
+      new_person_storage = Personalitystorage.new
+      new_person_storage.session = @session_id
+      new_person_storage.answer_id = @answer.id
+      new_person_storage.question_id = 1
+      new_person_storage.save
+      raise
+    end
+
+  end
+
   def create
   end
 
@@ -29,3 +45,5 @@ class PersonalityController < ApplicationController
   end
 
 end
+
+

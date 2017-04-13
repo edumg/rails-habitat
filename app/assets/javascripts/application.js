@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require cable
+//= require flash
 //= require video
 
 //= require underscore
@@ -24,4 +24,5 @@
 //= require navbar
 //= require bookings
 //= require profile
+//= require personality
 
