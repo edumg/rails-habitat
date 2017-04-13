@@ -25,4 +25,7 @@
 //= require bookings
 //= require profile
 //= require personality
+//= require bootstrap-datepicker
+//= require datepicker
+
 

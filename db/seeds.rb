@@ -72,11 +72,9 @@ photos_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror8_dam0uq
 "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror3_uwylg4",
 "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror9_bibeub",
 "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror5_fjsf3q",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/
-inteiror1_iyef8n",
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror1_iyef8n",
 "http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror7_a0jswc",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/
-inteiror4_fgl8nt"]
+"http://res.cloudinary.com/dc2fg86gy/image/upload/inteiror4_fgl8nt"]
 
 
 

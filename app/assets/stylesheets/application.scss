@@ -5,6 +5,7 @@
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datepicker";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "vendor/index";
@@ -20,5 +21,7 @@
 @import "components/call_to_action";
 @import "components/banner_right";
 @import "components/login";
-@import "show";
+@import "components/show";
+@import "components/new";
+
 

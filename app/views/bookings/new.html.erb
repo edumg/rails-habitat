@@ -1,8 +1,8 @@
  <div id="booking-date" class="container", style="padding: 60px">
-  <div class="row text-center">
+  <div class="row">
     <div class="col-xs-12 col-sm-6">
 
-      <h1>Bookings#new</h1>
+      <h2>Your Booking request:</h2>
 
       <%= render 'form' %>
 
@@ -11,10 +11,30 @@
     <div class="container">
 
       <div class="col-xs-12 col-sm-6">
-    <div class="card-booking" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 200, width: 400, crop: :fill %>')">
+        <div class="listing-card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 200, width: 400, crop: :fill %>')">
+      </div>
 <!-- @listing.photo -->
 
-        <h1> <%= @listing.name %> </h1>
+        <!--  -->
+      <div class="container-listing">
+        <div class="row">
+          <div class="col-sm-12">
+
+                <h2>
+                  €<%= @listing.price %>/m <%= @listing.name %>
+                </h2>
+
+                <p>
+                  <%= @listing.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                </p>
+
+          </div>
+        </div>
+      </div>
+
+
+<!--       <div class="col-md-5 col-sm-12">
+        <h2 class="owner-name"> <%= @listing.name %> </h2>
 
         <p>name: <%= @listing.name %> </p>
         <!-- <p>description: <%#= @listing.description %> </p> -->
@@ -31,10 +51,12 @@
         <%= link_to listings_path do %>
         <i class="fa fa-reply fa-5x"></i>
         <% end %>
+      </div> -->
 
 
-      </div>
-    </div>
+
   </div>
 </div>
 </div>
+</div>
+

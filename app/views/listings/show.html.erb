@@ -18,22 +18,25 @@ Show Listing
       <div class="block">
         <div class="section-title">
           <h2>
-            €<%= @listing.price %> <%= @listing.name %>
+            €<%= @listing.price %>/m <%= @listing.name %>
           </h2>
 
           <p>
             <%= @listing.description %>
           </p>
 
+          <br>
+
+          <p>
+            <strong>Listing type:</strong> <%= @listing.type_place %>
+          </p>
+
         </div>
 
-          <div>
-          <% if user_signed_in? %>
-           <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button2"  %>
-          <% else %>
-           <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
-          <% end %>
-          </div>
+
+        <div>
+          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
+        </div>
 
           <!-- PICTURES -->
           <div>
@@ -44,17 +47,17 @@ Show Listing
             <% @photos.each do |photo| %>
               <div class="col-xs-12 col-sm-4">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= photo.photo %>');">
-
-                  <a class="card-link" href="#" ></a>
                 </div>
               </div>
             <% end %>
+
           </div>
 
-            <!-- PICTURES -->
+        <br>
+        <br>
+        <br>
 
-            <!-- AMENITIES -->
-
+        <div class="row">
           <div class="col-xs-12">
             <h3 class="amenities-title">
               Amenities
@@ -76,11 +79,12 @@ Show Listing
 
             </div>
           </div>
+          </div>
 
           <!-- AMENITIES -->
 
              <!-- RULES -->
-
+        <div class="row">
           <div class="col-xs-12">
             <h3 class="amenities-title">
               Rules
@@ -102,11 +106,14 @@ Show Listing
 
             </div>
           </div>
-
-          </div>
         </div>
 
+      </div>
+    </div>
+
+
     <div class="col-md-5 col-sm-12">
+
             <div class="container-owner">
             <%= cl_image_tag current_user.profile.photo, alt: "Img", class: "owner-avatar" %>
 <!--             <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar"> -->
@@ -126,10 +133,12 @@ Show Listing
 
             </div>
           </div>
-  </div>
-</div>
+            <!-- PICTURES -->
 
+            <!-- AMENITIES -->
 
+    </div>
+    </div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>

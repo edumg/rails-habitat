@@ -1,16 +1,4 @@
-div.form-actions, .form-header, div.link {
-  margin: 30px auto;
-  max-width: 100%;
-}
 
-div.form-inputs {
-  margin: 30px auto;
-  max-width: 100%;
-}
-
-// div.form-actions {
-//   background-color: #008dde;
-// }
 
 .login-button {
   margin : 0px auto;
@@ -33,27 +21,13 @@ div.form-inputs {
   border: 2px solid #2176FF;
 }
 
-
-form fieldset input[type="submit"] {
-  background-color: #008dde;
-  border: none;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  color: #f4f4f4;
-  cursor: pointer;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  height: 50px;
-  text-transform: uppercase;
-  width: 300px;
-  -webkit-appearance:none;
-}
-
-#names-div, #address-div {
-  display:flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-.checkbox {
-  margin: 0 10px;
+.total-price {
+  font-size: 22px;
+  position: relative;
+  color: #191919;
+  // text-align: left;
+  font-weight: normal !important;
+  text-decoration: none !important;
+  // bottom: 45px !important;
+  // right: -15px !important;
 }

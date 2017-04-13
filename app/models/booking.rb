@@ -10,4 +10,14 @@ class Booking < ApplicationRecord
   #validates :num_guests, presence: true
   #validates :rent_cost, presence: true
   #validates :minimum_stay, presence:true
+
+  def start_date
+    return super if super.present?
+    Date.today
+  end
+
+  def end_date
+    return super if super.present?
+    Date.today + 6.months
+  end
 end
