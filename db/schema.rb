@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412150357) do
+ActiveRecord::Schema.define(version: 20170413090408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 20170412150357) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "num_guests"
-    t.float    "rent_cost"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "minimum_stay"
-    t.integer  "price_cents",  default: 0, null: false
+    t.integer  "rent_cost_cents"
+    t.integer  "price_cents",     default: 0, null: false
     t.string   "sku"
     t.index ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
     t.index ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
@@ -123,6 +123,16 @@ ActiveRecord::Schema.define(version: 20170412150357) do
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "state"
+    t.string   "booking_sku"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "USD", null: false
+    t.json     "payment"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
   create_table "personalities", force: :cascade do |t|
     t.integer  "question_id"
     t.integer  "profile_id"
@@ -150,9 +160,10 @@ ActiveRecord::Schema.define(version: 20170412150357) do
     t.boolean  "is_host"
     t.date     "birth_date"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "photo"
+    t.string   "description"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 

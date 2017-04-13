@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :gender, :is_host, :birth_date, :user_description, :photo, :photo_cache)
+    params.require(:profile).permit(:first_name, :last_name, :description, :gender, :is_host, :birth_date, :user_description, :photo, :photo_cache)
   end
 
   def save_my_previous_url

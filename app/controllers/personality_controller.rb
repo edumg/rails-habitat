@@ -30,6 +30,7 @@ class PersonalityController < ApplicationController
       new_person_storage.answer_id = @answer.id
       new_person_storage.question_id = 1
       new_person_storage.save
+      raise
     end
 
   end

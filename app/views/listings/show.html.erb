@@ -3,7 +3,7 @@ Show Listing
 <% end %>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 300, width: 400, crop: :fill %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photo, height: 200, width: 400, crop: :fill %>');">
   <!-- <div class="banner-content">
     <h1>Some Stuff</h1>
     <p>Very cool stuff, useful and smart</p>
@@ -22,21 +22,18 @@ Show Listing
           </h2>
 
           <p>
-            <%= @listing.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.
+            <%= @listing.description %>
           </p>
 
         </div>
 
-
           <div>
-          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
+          <% if user_signed_in? %>
+           <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button"  %>
+          <% else %>
+           <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
+          <% end %>
           </div>
-
-
-
-
-          <!-- <div class="container">
-          <div class="row"> -->
 
           <!-- PICTURES -->
           <div>
@@ -121,29 +118,25 @@ Show Listing
             </div>
           </div>
 
-          <!-- RULES -->
-
-
           </div>
         </div>
 
-
-
-
-
-
-
     <div class="col-md-5 col-sm-12">
             <div class="container-owner">
-            <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar">
+            <%= cl_image_tag current_user.profile.photo, alt: "Img", class: "owner-avatar" %>
+<!--             <img src="http://techstory.in/wp-content/uploads/2016/03/1-1.jpg" alt="Img" class="owner-avatar"> -->
               <!-- <img src="img/wrapper-img.gif" alt="Img"> -->
               <h3 class="owner-name">
                 <strong>Owner:</strong>
                 <%= @listing.profile.first_name %> <%= @listing.profile.last_name %>
-                <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button"  %>
+                <% if user_signed_in? %>
+                 <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button"  %>
+                <% else %>
+                 <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button"  %>
+                <% end %>
               </h3>
               <p>
-                Super easy going, loves a good classic rock n roll while having some beers. Works in a tech company and enjoy watching some TED talks from time to time.
+                <%= @listing.profile.description %>
               </p>
 
             </div>
@@ -151,66 +144,6 @@ Show Listing
   </div>
 </div>
 
-
-
-
-
-
-
-
-   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-        <div class="text-center">
-          <h1><%= @listing.name %></h1>
-
-          <p>name: <%= @listing.name %> </p>
-          <p>description: <%= @listing.description %> </p>
-          <p>location: <%= @listing.location %> </p>
-          <p>owner: <%= @listing.profile.first_name %> <%= @listing.profile.last_name %></p>
-          <p>owner id: <%= @listing.profile.id %></p>
-          <p>price: <%= @listing.price %> </p>
-          <p>amenities: <%= @listing.amenities %> </p>
-          <p>rules: <%= @listing.rules %> </p>
-          <p>type of place: <%= @listing.type_place %> </p>
-          <p>number of rooms: <%= @listing.num_rooms %> </p>
-
-          <% if current_user === @listing.profile_id %>
-          <%= link_to edit_listing_path do %>
-          <i class="fa fa-pencil-square-o fa-3x"></i>
-          <% end %>
-
-          <%= link_to listing_path(@listing), method: :delete  do %>
-          <i class="fa fa-trash fa-3x"></i>
-          <% end %>
-          <% end %>
-
-          <%= link_to new_listing_questionnaire_path(@listing.id) do %>
-            <h4>Create Personality Test</h4>
-          <% end %>
-
-          <%= link_to new_listing_booking_path(@listing), controller: "listing", action: "verify" do %>
-            <i class="fa fa-book fa-5x"></i>
-          <% end %>
-
-
-
-          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg banner-button"  %>
-
-
-          <br>
-          <br>
-          <br>
-
-          <%= link_to @back_url  do %>
-          <i class="fa fa-chevron-left fa-5x"></i>
-          <% end %>
-
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 <% content_for(:after_js) do %>

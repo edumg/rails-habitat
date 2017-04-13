@@ -52,3 +52,43 @@ end
   new_question.id_alt = i
   new_question.save
 end
+
+Profile.all.each do |profile|
+  upd = profile
+  upd.description = "Super easy going, loves a good classic rock n roll while having some beers. Works in a tech company and enjoy watching some TED talks from time to time."
+  upd.save
+end
+
+Listing.all.each do |listing|
+  upd = listing
+  upd.description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id."
+  upd.save
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

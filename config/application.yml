@@ -12,6 +12,9 @@
 development:
   FB_ID: "1519387744758372"
   FB_SECRET: "ce7f92345cc4b45ee477d84d8c05d0c3"
+  STRIPE_PUBLISHABLE_KEY: "pk_test_6LOwWXQ2TMWpKQop2zmuDdiH"
+  STRIPE_SECRET_KEY: "sk_test_Jce80QbHktdVz9mrK4Y8EtVj"
+
 #  GOOGLE_API_KEY: "AIzaSyDANjx3bosEtIyzJaoWs50Wnt6nt_1rmxU" # "AIzaSyDfmDHVOytPDrRB5C3EdaaIVgK0km5wcQM"
 
 
@@ -22,8 +25,3 @@ production:
 
 CLOUDINARY_URL: "cloudinary://777589833434932:KgdeJHLI2D-5EmNiS18JN5BpKmU@dc2fg86gy"
 
-# Stripe Development key - test
-
-development:
-  STRIPE_PUBLISHABLE_KEY: "pk_test_6LOwWXQ2TMWpKQop2zmuDdiH"
-  STRIPE_SECRET_KEY: "sk_test_Jce80QbHktdVz9mrK4Y8EtVj"

@@ -7,7 +7,7 @@
               <p>first name: <%= current_user.profile.first_name %> </p>
               <p>last name: <%= current_user.profile.last_name %> </p>
               <p>gender: <%= current_user.profile.gender %> </p>
-
+              <p>description: <%= current_user.profile.description %> </p>
               <% if current_user.profile.is_host %>
               <p>Type Account: <strong>Host</strong> </p>
               <% else %>
@@ -29,7 +29,8 @@
             <% else %>
              <% if @person_results %>
               <% @person_results.each do |result| %>
-                <%= cl_image_path result.answer.photo, root_path  %>
+                <h2><%= result %></h2>
+                <%#= cl_image_path result.answer.photo, root_path  %>
               <% end %>
               <% end %>
 
