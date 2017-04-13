@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   def show
     @back_url = session[:my_previous_url]
     @listings = current_user.profile.listings
+    @person_results = Personalitystorage.where session: session.id
   end
 
   def update
@@ -17,7 +18,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :gender, :is_host, :birth_date, :user_description, :photo, :photo_cache)
+    params.require(:profile).permit(:first_name, :last_name, :description, :gender, :is_host, :birth_date, :user_description, :photo, :photo_cache)
   end
 
   def save_my_previous_url

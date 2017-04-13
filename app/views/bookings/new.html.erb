@@ -37,14 +37,13 @@
         <h2 class="owner-name"> <%= @listing.name %> </h2>
 
         <p>name: <%= @listing.name %> </p>
-        <p>description: <%= @listing.description %> </p>
+        <!-- <p>description: <%#= @listing.description %> </p> -->
         <p>location: <%= @listing.location %> </p>
         <p>price: <%= @listing.price %> </p>
         <p>amenities: <%= @listing.amenities %> </p>
         <p>rules: <%= @listing.rules %> </p>
 
         <% if @listing.bookings.find_by profile_id: current_user.profile.id %>
-          <p style="color: red">_</p>
         <% else %>
           <p>_</p>
         <% end %>

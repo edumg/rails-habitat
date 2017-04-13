@@ -55,6 +55,7 @@ class User < ApplicationRecord
       profile_params[:user_id] = user.id
 
       profile = Profile.new(profile_params)
+      profile.photo = auth.info.image
       profile.save
     end
     return user

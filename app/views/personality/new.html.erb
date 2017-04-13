@@ -14,7 +14,7 @@
            <% @questions.each do |question| %>
              <%= link_to :anchor => "wall" do %>
                <div class="col-xs-6 col-sm-6 col-md-1", style="margin-right: 25px; display:block">
-                 <h6 id="persona-question-id-<%= question.id %>", style="width: 100px">Question <%= question.id %></h6>
+                 <h6 id="persona-question-id-<%= question.id_alt %>", style="width: 100px">Question <%= question.id_alt %></h6>
                  <%= link_to "",  new_personality_path, class: "btn btn-primary", style: "heigth: 1px; border-radius: 30px; width: 100px" %>
                </div>
              <% end %>

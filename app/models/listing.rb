@@ -11,7 +11,7 @@ class Listing < ApplicationRecord
   validates :type_place, presence:true
   validates :amenities, presence:true
   validates :rules, presence:true
-  validates :location, presence:true
+  #validates :location, presence:true
   validates :price, presence:true
   validates :num_rooms, presence:true
 

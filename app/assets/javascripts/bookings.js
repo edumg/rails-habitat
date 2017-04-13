@@ -1,4 +1,3 @@
-
 $('#new-booking').click(function() {
 
   if (!$(this).hasClass("done")) {

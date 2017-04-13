@@ -1,4 +1,4 @@
-class PersonalityStoragesController < ApplicationController
+class PersonalitystoragesController < ApplicationController
 
   before_action :get_session_id, only: [:create, :edit, :update, :destroy]
 
