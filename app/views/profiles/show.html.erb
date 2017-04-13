@@ -17,12 +17,23 @@
               <p>Birth Date: <%= current_user.profile.birth_date %> </p>
 
               <br>
-<!--               <#%= link_to edit_profile_path do %>
-              <i class="fa fa-pencil-square-o fa-3x"></i>
-              <#% end %> -->
+
               <%= link_to "Edit", edit_profile_path, class: "btn btn-primary" %>
               <br>
 
+            </div>
+
+            <div class="panel-body text-center">
+            <% if !@person_results && !current_user.profile.is_host %>
+              <h1>No Personality Test Created!</h1>
+            <% else %>
+             <% if @person_results %>
+              <% @person_results.each do |result| %>
+                <%= cl_image_path result.answer.photo, root_path  %>
+              <% end %>
+              <% end %>
+
+            <% end %>
             </div>
           </div>
           <div class="text-center">
