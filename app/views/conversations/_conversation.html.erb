@@ -1,9 +1,6 @@
 <div class="media">
   <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="http://placehold.it/64x64" alt="...">
-    </a>
-  </div>
+     </div>
   <div class="container">
     <div class="row">
       <div class="media-body">
@@ -19,7 +16,8 @@
           <%= link_to "View", conversation_path(conversation)  %>
         </div>
         <div class="col-xs-12 col-sm-2 col-md-1">
-          <%= link_to mark_as_read_conversation_path(conversation), :method => :post do %>
+          <%#= link_to mark_as_read_conversation_path(conversation), :method => :post do %>
+          <%= link_to mark_as_read_path(conversation), :method => :post do %>
           Mark as Read
           <% end %>
         </div>

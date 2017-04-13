@@ -1,4 +1,23 @@
-<% @results.each do |result| %>
-  <!-- <h2><%= result %></h2> -->
-<%= cl_image_tag result, class: "card"%>
-<% end %>
+<div class="text-center">
+  <h1 style="color: black">Personality Test Result</h1>
+
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+
+      <% @results.each do |result| %>
+        <%= cl_image_tag result, height: 1920, width: 2880, class: "personality_photo"%>
+      <% end %>
+
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <%= link_to "See Recommended Listings", listings_path, class: "btn btn-primary"  %>
+
+</div>

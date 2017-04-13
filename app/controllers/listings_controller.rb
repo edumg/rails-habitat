@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
   before_action :set_current_profile_user, only: [:create, :show, :edit, :update, :destroy]
   before_action :warning_person_test, only: [:show]
