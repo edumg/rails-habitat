@@ -13,19 +13,11 @@ $('#booking_page').click(function() {
 
 $('#new-booking').click(function() {
 
-  if (!$(this).hasClass("done")) {
-    $(this).toggleClass("available");
-    update_booking_status("booking");
-    alert('Booking status has changed!');
-  }
+  !$(this).addClass("done");
 });
 
 
 $('#new-payment').click(function() {
-
-  if (!$('#new-booking').hasClass("available")){
-    alert('First set booking as available!');
-  } else {
     if (!$(this).hasClass("done")) {
       var booking_id = $("#booking-id").text();
       // console.log(window.location.href.split("/")[4]);
