@@ -15,24 +15,25 @@
     <% if request.original_url.include? "personality/new" %>
       <% if user_signed_in? %>
 
-            <%= link_to mailbox_inbox_path do %>
-         <% if !current_user.facebook_picture_url.nil? %>
-           <div class="badge-container">
-             <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
-             <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-               <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-             <% end %>
-           </div>
-         <% else %>
-           <div class="badge-container">
-             <%= image_tag current_user.profile.photo, class: "avatar"%>
-             <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
-               <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
-             <% end %>
-           </div>
+         <ul class="nav navbar-nav">
+
+        <li>
+          <%= link_to mailbox_inbox_path do %>
+
+        <% if !current_user.facebook_picture_url.nil? %>
+          <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
+          <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
+            <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
+          <% end %>
+          <% else %>
+            <%= image_tag current_user.profile.photo, class: "avatar"%>
+            <% if current_user.mailbox.inbox(:unread => true).count(:id) > 0 %>
+              <div class="badge badge-blue"><%= current_user.mailbox.inbox(:unread => true).count(:id) %></div>
+            <% end %>
          <% end %>
-       <% end %>
-        <ul class="nav">
+        <% end %>
+        </li>
+
           <li> <%= link_to "Help", root_path  %> </li>
           <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
           <li> <%= link_to "Profile", profile_path  %> </li>
