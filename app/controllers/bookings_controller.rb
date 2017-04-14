@@ -42,8 +42,8 @@ class BookingsController < ApplicationController
     if @booking.save && ( end_date >= start_date )
       #notify host
       recipients = User.where(id: @listing.profile.user.id)
-      msg_body = "New booking was created for listing #{@listing.name} with booking id #{@booking.id}!"
-      msg_subject = "New booking for listing #{@listing.name}"
+      msg_body = "New booking was created for listing #{@booking.listing.name} with booking id #{@booking.id}!"
+      msg_subject = "New booking for listing #{@booking.listing.name}"
       conversation = current_user.send_message(recipients, msg_body, msg_subject).conversation
       flash[:notice] = "Notification email was sent to the host!"
 
