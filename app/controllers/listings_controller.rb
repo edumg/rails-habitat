@@ -13,7 +13,8 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.profile_id = @user.id
     if @listing.save
-      redirect_to listing_path(@listing)
+      redirect_to new_personality_path
+      #redirect_to listing_path(@listing)
     else
       render :new
     end

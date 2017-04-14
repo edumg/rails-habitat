@@ -2,13 +2,20 @@
   <div class="fleft", style="width: 56%">
     <div class="title_empty">
      <div>
+       <% if !current_user %>
        <div class="container", style="padding-left: -100px">
          <h1>Welcome!</h1>
        </div>
        <div class="container">
          <h2><strong>Let's get to know you better.</strong> <%= link_to "Why we do this test?", new_personality_path, class: "btn btn-primary", style: "font-size: 9px; border-radius: 20px" %></h2>
        </div>
+       <% else %>
 
+        <div class="container", style="padding-left: -100px">
+         <h1>Specify your preferences!</h1>
+       </div>
+
+       <% end %>
        <div class="container">
          <div class="col-xs-6 col-sm-6 col-md-12">
            <% @questions.each do |question| %>
