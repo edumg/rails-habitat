@@ -13,7 +13,7 @@ $('#booking_page').click(function() {
 
 $('#new-booking').click(function() {
 
-  !$(this).addClass("done");
+  $(this).addClass("done");
 });
 
 
