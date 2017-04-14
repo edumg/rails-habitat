@@ -5,10 +5,17 @@
   overflow-x: hidden;
 }
 
+.home {
+  .Site-content {
+    padding-top: 0;
+  }
+}
+
+
 .Site-content {
   flex: 1;
   min-height: 80vh;
-  padding-top: 70px;
+  padding-top: 62px;
 }
 
 // body {
@@ -30,13 +37,30 @@ h2 {
   font-weight: 900;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-  color: black;
-}
-
 h3 {
   font-size: 18px;
   font-weight: normal;
+}
+
+.listings-title {
+  font-size: 28px;
+  font-weight: normal;
+  position: relative;
+
+  top: 30;
+  left: 20px;
+}
+
+.listings-comment {
+  font-size: 18px;
+  font-weight: normal;
+  position: relative;
+  margin-bottom: 10px;
+  left: 20px;
+}
+
+.title-h3 {
+  margin-top: 100px;
 }
 
 .marging-top {

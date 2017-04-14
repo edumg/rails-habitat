@@ -16,22 +16,36 @@
 
 <div class="wrap">
   <div class="fleft">
+    <h3 class="listings-comment">
+      This are the listings <strong>matching your profile</strong>:
+    </h3>
+
     <% @listings.each do |listing| %>
       <div class="col-xs-12 col-sm-6 col-md-6">
+
         <%= link_to listing_path(listing) do %>
           <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
-
-            <div class="card-category">
-              <%= listing.name %>
             </div>
-          </div>
+
+            <div class="card-description">
+
+              <p>
+                <strong><%= listing.name %></strong>
+              </p>
+              <div class="card-price">
+                MONTHLY PRICE:
+                <a class="price-color" href=""><strong>€<%= listing.price%></strong></a>
+              </div>
+
+            </div>
         <% end %>
+
       </div>
     <% end %>
   </div>
 
 
-<div class="fright" style="margin-top: 20px; margin-right: 20px; width: 600px; height: 100vh">
+<div class="fright" style="padding-right: 20px; padding-left: 10px;  margin-top: 20px">
     <div id="map" style="width: 100%; height: 500px;"></div>
 </div>
 

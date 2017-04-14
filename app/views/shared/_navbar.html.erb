@@ -1,11 +1,11 @@
  <!-- NAVBAR -->
 
- <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar" id="navbar-master">
+ <div class="navbar-fixed-top opaque-navbar">
   <div class="navbar-container">
-    <div class="navbar-header">
+    <div>
 
       <%= link_to root_path do %>
-        <%= cl_image_tag "habitat_logo_x3xmgh", style: "width:150px" %>
+        <%= cl_image_tag "habitat_logo_x3xmgh", class: "navbar-habitat-brand" %>
       <% end %>
 
     </div>
@@ -15,7 +15,7 @@
     <% if request.original_url.include? "personality/new" %>
       <% if user_signed_in? %>
 
-            <%= link_to mailbox_inbox_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+            <%= link_to mailbox_inbox_path do %>
          <% if !current_user.facebook_picture_url.nil? %>
            <div class="badge-container">
              <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
@@ -32,7 +32,7 @@
            </div>
          <% end %>
        <% end %>
-        <ul class="nav navbar-nav pull-right test1">
+        <ul class="nav">
           <li> <%= link_to "Help", root_path  %> </li>
           <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </li>
           <li> <%= link_to "Profile", profile_path  %> </li>
@@ -42,17 +42,17 @@
       <% else %>
 
 
-        <ul class="nav navbar-nav pull-right test1">
+        <ul class="nav navbar-nav">
           <li> <%= link_to "Help", root_path  %> </li>
         </ul>
       <% end %>
     <% else %>
       <% if user_signed_in? %>
 
-        <ul class="nav navbar-nav pull-right test1">
+        <ul class="nav navbar-nav">
 
         <li>
-      <%= link_to mailbox_inbox_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <%= link_to mailbox_inbox_path do %>
 
         <% if !current_user.facebook_picture_url.nil? %>
           <%= image_tag current_user.facebook_picture_url, class: "avatar"%>
@@ -67,9 +67,9 @@
          <% end %>
         <% end %>
         </li>
-          <li> <%= link_to "Help", root_path, class: "navbar-links"  %> </li>
-          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-links"  %> </li>
-          <li> <%= link_to "Profile", profile_path, class: "navbar-links"  %> </li>
+          <li> <%= link_to "Help", root_path  %> </li>
+          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+          <li> <%= link_to "Profile", profile_path %> </li>
 
           <% if current_user.profile.is_host %>
             <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
@@ -81,10 +81,10 @@
       <% else %>
 
         <div>
-         <ul class="nav navbar-nav pull-right test1">
-          <li> <%= link_to "Help", root_path, class: "navbar-links" %> </li>
-          <li> <%= link_to "Login", user_session_path, class: "navbar-links" %> </li>
-          <li> <%= link_to "Sign up",  new_user_registration_path, class: "navbar-links" %> </li>
+         <ul class="nav navbar-nav">
+          <li> <%= link_to "Help", root_path %> </li>
+          <li> <%= link_to "Login", user_session_path %> </li>
+          <li> <%= link_to "Sign up",  new_user_registration_path %> </li>
           <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
         </div>
       <% end %>

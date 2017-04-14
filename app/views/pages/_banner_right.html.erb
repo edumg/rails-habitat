@@ -1,29 +1,8 @@
 <div class="fright">
-  <div class="banner" style="top: 0; background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(60,60,80,0.6) 20%), url('<%= cl_image_path "room_if6zlj" %>');">
-
-    <div class="banner-container">
-      <div class="div-margin">
-        <div class="col-md-12 col-sm-6">
-
-          <div>
-            <ul class="nav navbar-nav test1" id="navbar-nav-landing-page">
-              <li> <%= link_to "Single room in De Pijp",  new_user_registration_path, class: "title-text" %> </li>
-              <li> <%= link_to "€790/m", listings_path, class: "listing-button"%> </li>
-            </ul>
-          </div>
-      </div>
+  <div class="listing-image" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(60,60,80,0.6) 20%), url('<%= cl_image_path "room_if6zlj" %>');">
+    <div class="bottom-info">
+        Single room in De Pijp
+        <a class="btn btn-primary btn-lg listing-button" href="">Get €790/m</a>
     </div>
   </div>
-  </div>
 </div>
-
-
-
-
-<!-- <h3>
-            Single room in De Pijp
-          </h3>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <input type="submit" class="btn btn-primary btn-lg banner-button" value="732/m">
-        </div> -->

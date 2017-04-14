@@ -1,53 +1,39 @@
-.banner-container {
-  width: 1400px;
+.listing-image {
+  color: white;
+  height: 800px;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 0px 0px;
+}
+
+
+.bottom-info {
+  position: absolute;
+  bottom:0;
+  padding:20px;
+  right: 0;
+}
+
+.listing-button {
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  background-color: #0846BA;
+  border-color: #0846BA;
+  border-radius: 0.2em;
+}
+.listing-button:hover {
+  background-color: #469AE0;
+}
+
+
+
+.fright {
   position: relative;
-  bottom: -360px;
-  right: -190px;
-}
-
-.navbar-nav .listing-button {
-  color: white !important;
-  font-weight: normal;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  background-color: #0846BA;
-  border-radius: 0.2em;
-  margin-top : 6px;
-}
-
-.navbar-nav .listing-button:hover {
-  color: #white !important;
-  font-weight: normal;
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  background-color: #0846BA;
-  border-radius: 0.2em;
-  margin-top : 6px;
-}
-
-.navbar-nav .title-text {
-  color: white !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  background-color: transparent !important;
-}
-
-.navbar-nav .title-text:hover {
-  color: white !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  background-color: transparent !important;
-}
-
-#navbar-nav-landing-page {
-  margin-bottom: 400px;
+  float: right;
+  height: 800px;
+  width: 50%;
 }
 
