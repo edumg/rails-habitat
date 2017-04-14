@@ -95,7 +95,7 @@ class BookingsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:booking).permit(:minimum_stay, :status, :num_guests, :rent_cost, :profile, :listing, :start_date, :end_date)
+    params.require(:booking).permit(:minimum_stay, :status, :rent_cost_cents, :num_guests, :rent_cost, :profile, :listing, :start_date, :end_date)
   end
 
   def set_listing_by_id
