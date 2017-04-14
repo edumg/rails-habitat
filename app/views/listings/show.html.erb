@@ -18,7 +18,7 @@ Show Listing
       <div class="block">
         <div class="section-title">
           <h2>
-            €<%= @listing.price %>/m <%= @listing.name %>
+            <%= humanized_money_with_symbol(@listing.price) %>/m <%= @listing.name %>
           </h2>
 
           <p>
@@ -35,7 +35,7 @@ Show Listing
 
 
         <div>
-          <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button2"  %>
+          <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button2"  %>
         </div>
 
           <!-- PICTURES -->
@@ -129,7 +129,7 @@ Show Listing
                 <% if user_signed_in? %>
                  <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button"  %>
                 <% else %>
-                 <%= link_to "Request Booking", new_personality_path, class: "btn btn-primary btn-lg booking-button"  %>
+                 <%= link_to "Request Booking", new_listing_booking_path(@listing), class: "btn btn-primary btn-lg booking-button"  %>
                 <% end %>
               </h3>
               <p>

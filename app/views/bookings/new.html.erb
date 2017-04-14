@@ -21,7 +21,7 @@
           <div class="col-sm-12">
 
                 <h2>
-                  €<%= @listing.price %>/m <%= @listing.name %>
+                  <%= humanized_money_with_symbol(@listing.price) %>/m <%= @listing.name %>
                 </h2>
 
                 <p>

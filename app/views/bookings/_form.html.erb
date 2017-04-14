@@ -18,7 +18,8 @@
   <br>
   <h3 class="total-price">Total Price:</h3>
   <p id="price">
-    €<%= @listing.price %>
+    <%= humanized_money_with_symbol(@listing.price) %>
+
   </p>
   <br>
   <br>

@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     @booking.listing_id = params[:listing_id]
 
     @booking.price_cents = @listing.price
-    @booking.rent_cost_cents = @listing.price * 100
+    @booking.rent_cost_cents = @listing.price
     @booking.status = "CREATED"
 
     start_date = Date.civil(params[:booking]["start_date(1i)"].to_i,params[:booking]["start_date(2i)"].to_i,params[:booking]["start_date(3i)"].to_i)

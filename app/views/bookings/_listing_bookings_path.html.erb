@@ -15,7 +15,7 @@
               <p>location: <%= @listing.location %> </p>
               <p>owner: <%= @listing.profile.first_name %> <%= @listing.profile.last_name %></p>
               <p>owner id: <%= @listing.profile.id %></p>
-              <p>price: <%= @listing.price %> </p>
+              <p>price: <%= humanized_money_with_symbol(@listing.price) %> </p>
               <p>amenities: <%= @listing.amenities %> </p>
               <p>rules: <%= @listing.rules %> </p>
               <p>type of place: <%= @listing.type_place %> </p>
