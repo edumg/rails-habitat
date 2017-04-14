@@ -35,6 +35,7 @@ class BookingsController < ApplicationController
     @booking.rent_cost_cents = @listing.price
     @booking.status = "CREATED"
 
+
     start_date = params[:booking][:start_date]
     end_date = params[:booking][:end_date]
 
@@ -55,8 +56,10 @@ class BookingsController < ApplicationController
 
   def show
     @profile = current_user.profile
-    @booking = Booking.find_by profile_id: @profile.id
+   #@booking = Booking.find_by profile_id: @profile.id
+    @booking.status = "PAYMENT"
     @total_price = @booking.rent_cost_cents
+    sleep 9
   end
 
   def delete

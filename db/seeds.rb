@@ -42,24 +42,24 @@ Personality.destroy_all
 Personalitystorage.destroy_all
 # Questionnaire.destroy_all
 
-images_url = ["http://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File1_txtgha",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File3_azp3hb",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File4_lmvfil",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/File2_uxpdvw",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person5_qpak8t",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person4_xhrx0p",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person6_zdwha3",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person3_ys6cql",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person2_hkz6pp",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person7_yvz4le",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person8_u3kcwu",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person9_yslpic",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person10_yxfe7l",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person11_muhayc",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person12_m7fchb",
-"http://res.cloudinary.com/dc2fg86gy/image/upload/person13_qeegro"]
+images_url = ["https://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/john-sting-112628_urpf9v",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/File1_txtgha",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/File3_azp3hb",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/File4_lmvfil",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/File2_uxpdvw",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person5_qpak8t",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person4_xhrx0p",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person6_zdwha3",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person3_ys6cql",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person2_hkz6pp",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person7_yvz4le",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person8_u3kcwu",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person9_yslpic",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person10_yxfe7l",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person11_muhayc",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person12_m7fchb",
+"https://res.cloudinary.com/dc2fg86gy/image/upload/person13_qeegro"]
 
 #images_url = ["party_nv0ts7", "john-sting-112628_urpf9v", "File1_txtgha", "File2_uxpdvw", "File4_lmvfil", "File3_azp3hb"]
 images_url.each do |img|
