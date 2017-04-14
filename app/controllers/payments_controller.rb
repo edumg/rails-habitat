@@ -19,16 +19,16 @@ def create
 
   @order.update(payment: charge.to_json, state: 'paid')
 
-  booking_upd = Booking.find_by sku: @order.booking_sku
+  @booking_upd = Booking.find_by sku: @order.booking_sku
 
-  if booking_upd.nil?
-    flash['alert'] = "Error when updating booking status to PAID!"
+  if @booking_upd.nil?
+    flash['alert'] = "Error when updating booking status to CONTRACT!"
   else
-    booking_upd.status = "PAID"
-    booking_upd.save
+    @booking_upd.status = "CONTRACT"
+    @booking_upd.save
   end
 
-  redirect_to order_path(@order)
+  redirect_to booking_path(@booking_upd)
 
 rescue Stripe::CardError => e
   flash[:error] = e.message

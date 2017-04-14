@@ -5,7 +5,7 @@ Show Booking
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path "room_if6zlj", height: 300, width: 400, crop: :fill %>');">
 <!-- @booking.listing.photo, -->
 
- <div class="container">
+ <div class="container" id="booking_page">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
@@ -14,7 +14,7 @@ Show Booking
 
         <p>Listing name: <%= @booking.listing.name %> </p>
         <p>Host name: <%= @booking.listing.profile.first_name %> <%= @booking.listing.profile.last_name %> </p>
-        <p>Status: <%= @booking.status %> </p>
+        <!-- <p>Status: <%= @booking.status %> </p> -->
         <p>Start Date: <%= @booking.start_date %> </p>
         <p>End Date: <%= @booking.end_date %> </p>
         <p>Num guests: <%= @booking.num_guests %> </p>
@@ -37,26 +37,21 @@ Show Booking
             <h4>Create Personality Test</h4>
           <#% end %>
         -->
-        <% if @booking.status == "PAYMENT" %>
-        <%= form_tag orders_path do %>
-        <%= hidden_field_tag 'booking_id', @booking.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-        <% end %>
-        <% end %>
+
+        <div class="hidden" id="payment-button">
+          <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'booking_id', @booking.id %>
+            <%= submit_tag 'Purchase', class: 'btn btn-primary'%>
+          <% end %>
+        </div>
 
         <% if @booking.status == "CONTRACT" %>
-        <%= link_to new_payment_path(@booking) do %>
-        <div class="btn btn-primary">
-          Sign the contract
-        </div>
-        <% end %>
+          <%= link_to "SIGN", root_path, class: 'btn btn-primary' %>
         <% end %>
 
-
-
-   <!--        <#%= link_to new_booking_booking_path(@booking), controller: "booking", action: "verify" do %>
-            <i class="fa fa-book fa-5x"></i>
-            <#% end %> -->
+        <% if @booking.status == "DONE" %>
+          <%= link_to "DONE", root_path, class: 'btn btn-primary' %>
+        <% end %>
 
             <br>
             <br>

@@ -1,3 +1,16 @@
+var delayMillis = 4000; //1 second
+
+
+
+$('#booking_page').click(function() {
+  setTimeout(function() {
+  $('#payment-button').removeClass('hidden');
+}, delayMillis);
+
+
+});
+
+
 $('#new-booking').click(function() {
 
   if (!$(this).hasClass("done")) {
@@ -5,7 +18,6 @@ $('#new-booking').click(function() {
     update_booking_status("booking");
     alert('Booking status has changed!');
   }
-
 });
 
 
@@ -42,18 +54,6 @@ $('#new-contract').click(function() {
 
 
 function update_booking_status(new_status){
+
   return true;
-  // var listing_id = window.location.href.split("/")[4];
-  // var ref_value = $('#ref').val();
-  // $.ajax({
-  //   url: '/bookings/mark_as_available_to_pay',
-  //   type: 'put'
-  //   error: function(data){
-  //     alert('Error occurred while updating the record.');
-  //   },
-  //   success: function(data){
-  //     alert('Record updated successfully.');
-  //   }
-  // });
-  //   return false;
 }

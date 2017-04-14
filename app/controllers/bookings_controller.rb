@@ -56,10 +56,14 @@ class BookingsController < ApplicationController
 
   def show
     @profile = current_user.profile
+    # if @booking.status == "CONTRACT"
+    #   flash['notice'] = "Booking successfully created!"
+    #   @booking.status = "DONE"
+    #   @booking.save
+    # end
    #@booking = Booking.find_by profile_id: @profile.id
-    @booking.status = "PAYMENT"
+    #@booking.status = "PAYMENT"
     @total_price = @booking.rent_cost_cents
-    sleep 9
   end
 
   def delete

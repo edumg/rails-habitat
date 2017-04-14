@@ -56,7 +56,7 @@
               <p>Amount: <%= humanized_money_with_symbol(booking.rent_cost_cents) %></p>
               <p>Renter: <%= booking.profile.first_name %> <% booking.profile.last_name %></p>
             </div>
-            <ul class="list-inline product-controls hidden-sm hidden-xs">
+<!--             <ul class="list-inline product-controls hidden-sm hidden-xs">
               <li>
                 <i class="fa fa-plus fa-2x"  id="new-booking-<%= booking.id%> "></i>
               </li>
@@ -67,6 +67,21 @@
 
               <li>
                 <i class="fa fa-handshake-o fa-2x" id="new-contract-<%= booking.id%> "></i>
+              </li>
+
+            </ul> -->
+
+            <ul class="list-inline product-controls hidden-sm hidden-xs">
+              <li>
+                <i class="fa fa-plus fa-2x"  id="new-booking"></i>
+              </li>
+
+              <li>
+                <i class="fa fa-money fa-2x" id="new-payment"></i>
+              </li>
+
+              <li>
+                <i class="fa fa-handshake-o fa-2x" id="new-contract"></i>
               </li>
 
             </ul>
