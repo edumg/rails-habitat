@@ -13,11 +13,13 @@ $('#booking_page').click(function() {
 
 $('#new-booking').click(function() {
 
-  $(this).addClass("done");
+$(this).addClass("done");
 });
 
 
 $('#new-payment').click(function() {
+
+
     if (!$(this).hasClass("done")) {
       var booking_id = $("#booking-id").text();
       // console.log(window.location.href.split("/")[4]);
@@ -25,7 +27,6 @@ $('#new-payment').click(function() {
       update_booking_status("payment");
       alert('Payment status has changed!');
     }
-  }
 
 });
 
