@@ -24,19 +24,7 @@
 
             </div>
 
-            <div class="panel-body text-center">
-            <% if !@person_results && !current_user.profile.is_host %>
-              <h1>No Personality Test Created!</h1>
-            <% else %>
-             <% if @person_results %>
-              <% @person_results.each do |result| %>
-                <h2><%= result.answer.photo %></h2>
-                <%#= cl_image_path result.answer.photo, root_path  %>
-              <% end %>
-              <% end %>
 
-            <% end %>
-            </div>
           </div>
           <div class="text-center">
             <%= link_to "Back", root_path, class: "btn btn-primary" %>
