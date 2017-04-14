@@ -47,13 +47,19 @@
 
   <% if @bookings.nil? %>
         <h1 class="text-center" style="margin-bottom: 65px">No Bookings...</h1>
-      <% else %>
+  <% else %>
         <h1 class="text-center">Your Listings</h1>
+        <div class="text-center">
+          <%= link_to new_listing_path do %>
+            <i class="fa fa-plus fa-3x"></i>
+          <% end %>
+        </div>
         <% @listings.each do |listing| %>
           <div class="col-xs-12 col-sm-6 col-md-6">
              <%= link_to listing_bookings_path(listing) do %>
                <div style="margin-bottom: 65px"></div>
                <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path listing.photo, height: 300, width: 400, crop: :fill %>')">
+
                   <div class="card-category">
                      <%= listing.name %>
                   </div>
@@ -72,5 +78,7 @@
           </div>
         <% end %>
 
-      <% end %>
+
+<% end %>
+
   </div>

@@ -72,8 +72,8 @@
           <li> <%= link_to "Profile", profile_path %> </li>
 
           <% if current_user.profile.is_host %>
-            <li> <%= link_to "List your place for free", listings_path, class: "navbar-button"%> </li>
-            <li> <%= link_to "Manage your bookings", profile_path, class: "btn btn-primary" %> </li>
+            <li> <%= link_to "List your place for free", new_listing_path, class: "navbar-button"%> </li>
+  <!--           <li> <%#= link_to "Manage your bookings", profile_path, class: "btn btn-primary" %> </li> -->
           <% else %>
             <li> <%= link_to "View your bookings", bookings_path %> </li>
           <% end %>
