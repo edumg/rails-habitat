@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     if params[:listing_id]
       @list_book_path = true
       # get bookings of a listing
-      @listing_bookings = Booking.where(listing_id: params[:listing_id])
+      @listing_bookings = Booking.where(listing_id: params[:listing_id]).order(start_date: :desc)
       @foo_attr = { "data-foo-1" => 1, "data-foo-2" => 2 }
     end
 
@@ -35,8 +35,8 @@ class BookingsController < ApplicationController
     @booking.rent_cost_cents = @listing.price
     @booking.status = "CREATED"
 
-    start_date = Date.civil(params[:booking]["start_date(1i)"].to_i,params[:booking]["start_date(2i)"].to_i,params[:booking]["start_date(3i)"].to_i)
-    end_date = Date.civil(params[:booking]["end_date(1i)"].to_i,params[:booking]["end_date(2i)"].to_i,params[:booking]["end_date(3i)"].to_i)
+    start_date = params[:booking][:start_date]
+    end_date = params[:booking][:end_date]
 
     if @booking.save && ( end_date >= start_date )
       #notify host
