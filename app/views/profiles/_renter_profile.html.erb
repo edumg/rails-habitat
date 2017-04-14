@@ -1,0 +1,44 @@
+   <h1 class="text-center" style="margin-bottom: 10px"></h1>
+          <div class="panel panel-primary" style="margin-left: 25%; margin-right: 25%">
+            <div class="panel-heading text-center">Profile</div>
+            <div class="panel-body text-center">
+
+              <p>first name: <%= current_user.profile.first_name %> </p>
+              <p>last name: <%= current_user.profile.last_name %> </p>
+              <p>gender: <%= current_user.profile.gender %> </p>
+              <p>description: <%= current_user.profile.description %> </p>
+              <% if current_user.profile.is_host %>
+              <p>Type Account: <strong>Host</strong> </p>
+              <% else %>
+              <p>Type Account: <strong>Renter</strong> </p>
+              <% end %>
+
+              <p>Birth Date: <%= current_user.profile.birth_date %> </p>
+
+              <br>
+
+              <%= link_to "Edit", edit_profile_path, class: "btn btn-primary" %>
+              <br>
+
+            </div>
+
+            <div class="panel-body text-center">
+            <% if !@person_results && !current_user.profile.is_host %>
+              <h1>No Personality Test Created!</h1>
+            <% else %>
+             <% if @person_results %>
+              <% @person_results.each do |result| %>
+                <h2><%= result.answer.photo %></h2>
+                <%#= cl_image_path result.answer.photo, root_path  %>
+              <% end %>
+              <% end %>
+
+            <% end %>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <%= link_to "Back", root_path, class: "btn btn-primary" %>
+          </div>
+
+

@@ -38,8 +38,8 @@ Photo.destroy_all
 # User.destroy_all
 
 # Order.destroy_all
-# Personality.destroy_all
-# Personalitystorage.destroy_all
+Personality.destroy_all
+Personalitystorage.destroy_all
 # Questionnaire.destroy_all
 
 images_url = ["https://res.cloudinary.com/dc2fg86gy/image/upload/party_nv0ts7",

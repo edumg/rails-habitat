@@ -92,7 +92,9 @@ class BookingsController < ApplicationController
   end
 
   def set_listing_by_id
-    @listing = Listing.find(params[:listing_id])
+    if params[:listing_id]
+      @listing = Listing.find(params[:listing_id])
+    end
   end
 
   def range_params
